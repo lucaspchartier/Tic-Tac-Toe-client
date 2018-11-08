@@ -21,6 +21,7 @@ const signInSuccess = function (signInResponse) {
   $('#message').removeClass('error-message')
   $('#change-password-form').removeClass('hidden')
   $('#sign-out-button').removeClass('hidden')
+  $('.grid').removeClass('hidden')
   $('#sign-up-form').addClass('hidden')
   $('#sign-in-form').addClass('hidden')
 }
