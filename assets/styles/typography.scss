@@ -1,16 +1,17 @@
 body {
-  background-color: #0d2b5b;
+  background-color: $dark-blue-color;
   font-family: helvetica sans-serif;
   margin: 0;
 }
 
 h1 {
-  color: #09a0c1;
+  color: $title-font-color;
   font-size: 100px;
   text-align: center;
 }
 
 div {
+  padding: 50px;
   text-align: center;
 }
 
@@ -30,19 +31,22 @@ div {
 
 .box {
   align-items: center;
-  border: 1px solid #ffffff;
-  color: #ffffff;
+  border: 1px solid $black-color;
+  color: $white-color;
   display: flex;
   height: 80px;
   justify-content: center;
-}
-
-.grey {
-  background-color: #808080;
+  padding: 100px;
 }
 
 .teal {
-  background-color: #008080;
+  background-color: $teal-color;
+  color: $white-color;
+}
+
+.grey {
+  background-color: $grey-color;
+  color: $white-color;
 }
 
 .form {
@@ -50,21 +54,21 @@ div {
 }
 
 #sign-up-form {
-  color: #09a0c1;
+  color: $title-font-color;
   text-align: center;
 }
 
 #sign-in-form {
-  color: #09a0c1;
+  color: $title-font-color;
   text-align: center;
 }
 
 #change-password-form {
-  color: #09a0c1;
+  color: $title-font-color;
   text-align: center;
 }
 
 #sign-out-button {
-  margin: 0 auto;
+  margin: 0;
   position: relative;
 }
