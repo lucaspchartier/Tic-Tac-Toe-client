@@ -38,6 +38,7 @@ const signOutSuccess = function (signOutResponse) {
   $('#message').removeClass('error-message')
   $('#change-password-form').addClass('hidden')
   $('#sign-out-button').addClass('hidden')
+  $('.grid').addClass('hidden')
   $('#sign-up-form').removeClass('hidden')
   $('#sign-in-form').removeClass('hidden')
 }

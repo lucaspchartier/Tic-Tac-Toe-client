@@ -17,33 +17,52 @@ $(() => {
   $('#sign-out-button').on('click', events.onSignOut)
 })
 
+// players
+let currentPlayer = 'x'
+//
+if (currentPlayer === 'x') {
+  currentPlayer = 'o'
+} else {
+  currentPlayer = 'x'
+}
+
+// const newGame = function () {
+//  event.preventDefault()
+//
+//  }
+// }
+// number of games played
+// const gamesPlayed = []
+// playerOne always goes first
+// gameArray = [0,1,2,3,4,5,6,7,8]
+
 $(() => {
   // JS game code
   $('#0').on('click', function (event) {
-    $(event.target).text()
+    $(event.target).text(currentPlayer)
   })
   $('#1').on('click', function (event) {
-    $(event.target).text()
+    $(event.target).text(currentPlayer)
   })
   $('#2').on('click', function (event) {
-    $(event.target).text()
+    $(event.target).text(currentPlayer)
   })
   $('#3').on('click', function (event) {
-    $(event.target).text()
+    $(event.target).text(currentPlayer)
   })
   $('#4').on('click', function (event) {
-    $(event.target).text()
+    $(event.target).text(currentPlayer)
   })
   $('#5').on('click', function (event) {
-    $(event.target).text()
+    $(event.target).text(currentPlayer)
   })
   $('#6').on('click', function (event) {
-    $(event.target).text()
+    $(event.target).text(currentPlayer)
   })
   $('#7').on('click', function (event) {
-    $(event.target).text()
+    $(event.target).text(currentPlayer)
   })
   $('#8').on('click', function (event) {
-    $(event.target).text()
+    $(event.target).text(currentPlayer)
   })
 })
