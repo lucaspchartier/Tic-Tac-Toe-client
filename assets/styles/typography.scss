@@ -1,11 +1,11 @@
 body {
-  background-color: $dark-blue-color;
+  background-color: $background-color;
   font-family: helvetica sans-serif;
   margin: 0;
 }
 
 h1 {
-  color: $title-font-color;
+  color: $font-color;
   font-size: 100px;
   text-align: center;
 }
@@ -31,22 +31,17 @@ div {
 
 .box {
   align-items: center;
-  border: 1px solid $black-color;
-  color: $white-color;
+  border: 1px solid $border-color;
+  color: $background-color;
   display: flex;
+  font-size: 50px;
   height: 80px;
   justify-content: center;
   padding: 100px;
 }
 
 .teal {
-  background-color: $teal-color;
-  color: $white-color;
-}
-
-.grey {
-  background-color: $grey-color;
-  color: $white-color;
+  background-color: $font-color;
 }
 
 .form {
@@ -54,17 +49,17 @@ div {
 }
 
 #sign-up-form {
-  color: $title-font-color;
+  color: $font-color;
   text-align: center;
 }
 
 #sign-in-form {
-  color: $title-font-color;
+  color: $font-color;
   text-align: center;
 }
 
 #change-password-form {
-  color: $title-font-color;
+  color: $font-color;
   text-align: center;
 }
 
