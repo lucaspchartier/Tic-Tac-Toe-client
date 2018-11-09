@@ -37,9 +37,15 @@ const onSignOut = function () {
     .catch(ui.failure)
 }
 
+const onNewGame = function () {
+  event.preventDefault()
+  $('.box').text('')
+}
+
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onNewGame
 }

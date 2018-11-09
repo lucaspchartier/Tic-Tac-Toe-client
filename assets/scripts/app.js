@@ -15,6 +15,7 @@ $(() => {
   $('#sign-in-form').on('submit', events.onSignIn)
   $('#change-password-form').on('submit', events.onChangePassword)
   $('#sign-out-button').on('click', events.onSignOut)
+  $('#new-game-button').on('click', events.onNewGame)
 })
 
 // players
@@ -26,11 +27,6 @@ if (currentPlayer === 'x') {
   currentPlayer = 'x'
 }
 
-// const newGame = function () {
-//  event.preventDefault()
-//
-//  }
-// }
 // number of games played
 // const gamesPlayed = []
 // playerOne always goes first
