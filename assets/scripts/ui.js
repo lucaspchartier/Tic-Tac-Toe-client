@@ -37,12 +37,12 @@ const signOutSuccess = function (signOutResponse) {
   $('#message').html('Logout successful!')
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
-  $('#change-password-form').addClass('hidden')
-  $('#sign-out-button').addClass('hidden')
-  $('.grid').addClass('hidden')
-  $('#new-game-button').addClass('hidden')
-  $('#sign-up-form').removeClass('hidden')
-  $('#sign-in-form').removeClass('hidden')
+}
+
+const newGameSuccess = function (newGameResponse) {
+  $('#message').html('New game successfully created!')
+  $('#message').addClass('success-message')
+  $('#message').removeClass('error-message')
 }
 
 module.exports = {
@@ -50,5 +50,6 @@ module.exports = {
   failure,
   signInSuccess,
   changePasswordSuccess,
-  signOutSuccess
+  signOutSuccess,
+  newGameSuccess
 }

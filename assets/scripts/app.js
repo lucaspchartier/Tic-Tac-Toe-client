@@ -19,18 +19,25 @@ $(() => {
 })
 
 // players
-let currentPlayer = 'x'
-//
-if (currentPlayer === 'x') {
-  currentPlayer = 'o'
-} else {
-  currentPlayer = 'x'
+let currentPlayer = 'X'
+// switching between 'X' and 'O'
+const switchPlayer = function () {
+  if (currentPlayer === 'X') {
+    currentPlayer = 'O'
+  } else {
+    currentPlayer = 'X'
+  }
+}
+
+const newTurn = function (switchPlayer) {
+
 }
 
 // number of games played
 // const gamesPlayed = []
 // playerOne always goes first
 // gameArray = [0,1,2,3,4,5,6,7,8]
+// const checkForWinner
 
 $(() => {
   // JS game code

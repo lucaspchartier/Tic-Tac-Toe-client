@@ -39,8 +39,20 @@ const onSignOut = function () {
 
 const onNewGame = function () {
   event.preventDefault()
-  $('.box').text('')
+  $(event.target).trigger('reset')
+  api.newGame()
+    .then(ui.newGameSuccess)
+    .catch(ui.failure)
 }
+
+// const onUpdateGame = (inputData) => {
+//  $(event.target).trigger('reset')
+//  api.updateGame()
+//    .then(ui.updateGameSuccess)
+//    .catch(ui.failure)
+// }
+
+// const onUpdateMove = (i)
 
 module.exports = {
   onSignUp,
