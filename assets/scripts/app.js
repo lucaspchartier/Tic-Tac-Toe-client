@@ -52,29 +52,38 @@ $(() => {
   // JS game code
   $('#0').on('click', function (event) {
     $(event.target).text(currentPlayer)
+    switchPlayer()
   })
   $('#1').on('click', function (event) {
     $(event.target).text(currentPlayer)
+    switchPlayer()
   })
   $('#2').on('click', function (event) {
     $(event.target).text(currentPlayer)
+    switchPlayer()
   })
   $('#3').on('click', function (event) {
     $(event.target).text(currentPlayer)
+    switchPlayer()
   })
   $('#4').on('click', function (event) {
     $(event.target).text(currentPlayer)
+    switchPlayer()
   })
   $('#5').on('click', function (event) {
     $(event.target).text(currentPlayer)
+    switchPlayer()
   })
   $('#6').on('click', function (event) {
     $(event.target).text(currentPlayer)
+    switchPlayer()
   })
   $('#7').on('click', function (event) {
     $(event.target).text(currentPlayer)
+    switchPlayer()
   })
   $('#8').on('click', function (event) {
     $(event.target).text(currentPlayer)
+    switchPlayer()
   })
 })
