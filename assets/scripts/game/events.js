@@ -1,22 +1,30 @@
 'use strict'
 
-// const api = require('./game/api.js')
-// const ui = require('./game/ui.js')
+const api = require('./api.js')
+const ui = require('./ui.js')
 
-// const onNewGame = function () {
-//  console.log('It works!')
-//  api.newGame()
-//    .then(ui.newGameSuccess)
-//    .catch(ui.failure)
-// }
+const onNewGame = function () {
+  event.preventDefault()
+  console.log('It works!')
+  $('.box').text('')
+}
 
-// const onUpdateGame = (inputData) => {
-//  $(event.target).trigger('reset')
-//  api.updateGame()
-//    .then(ui.updateGameSuccess)
-//    .catch(ui.failure)
-// }
+const onCreateGame = function () {
+  console.log('It works!')
+  api.newGame()
+    .then(ui.newGameSuccess)
+    .catch(ui.failure)
+}
+
+const onUpdateGame = function () {
+  $(event.target).trigger('reset')
+  api.updateGame()
+    .then(ui.updateGameSuccess)
+    .catch(ui.failure)
+}
 
 module.exports = {
-//  onNewGame
+  onNewGame,
+  onCreateGame,
+  onUpdateGame
 }

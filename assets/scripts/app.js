@@ -7,7 +7,7 @@
 // require('./example')
 
 const authEvents = require('./auth/events.js')
-// const gameEvents = require('./game/events.js')
+const gameEvents = require('./game/events.js')
 
 // document on ready
 $(() => {
@@ -18,7 +18,7 @@ $(() => {
   $('#sign-out-button').on('click', authEvents.onSignOut)
 
   // game events
-//  $('#new-game-button').on('click', gameEvents.onNewGame)
+  $('#new-game-button').on('click', gameEvents.onNewGame)
 })
 
 // game cells
