@@ -5,7 +5,6 @@ const ui = require('./ui.js')
 
 const onNewGame = function () {
   event.preventDefault()
-  console.log('It works!')
   $('.box').text('')
 }
 
