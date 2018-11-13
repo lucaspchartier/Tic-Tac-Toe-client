@@ -27,4 +27,6 @@ const updateGame = function () {
 module.exports = {
   createGame,
   updateGame
+  // showGame,
+  // gameIndex
 }

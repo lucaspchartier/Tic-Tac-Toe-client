@@ -3,27 +3,38 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
 
-const onNewGame = function () {
+const onCreateGame = function () {
   event.preventDefault()
   $('.box').text('')
-}
-
-const onCreateGame = function () {
-  console.log('It works!')
-  api.newGame()
-    .then(ui.newGameSuccess)
+  api.createGame()
+    .then(ui.createGameSuccess)
     .catch(ui.failure)
 }
 
 const onUpdateGame = function () {
-  $(event.target).trigger('reset')
+  console.log('It works!')
   api.updateGame()
     .then(ui.updateGameSuccess)
     .catch(ui.failure)
 }
 
+const onShowGame = function () {
+  console.log('It works!')
+  api.showGame()
+    .then(ui.showGameSuccess)
+    .catch(ui.failure)
+}
+
+const onGameIndex = function () {
+  console.log('It works!')
+  api.gameIndex()
+    .then(ui.gameIndexSuccess)
+    .catch(ui.failure)
+}
+
 module.exports = {
-  onNewGame,
   onCreateGame,
-  onUpdateGame
+  onUpdateGame,
+  onShowGame,
+  onGameIndex
 }
