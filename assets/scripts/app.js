@@ -6,20 +6,27 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
-const events = require('./events.js')
+const authEvents = require('./auth/events.js')
+// const gameEvents = require('./game/events.js')
 
 // document on ready
 $(() => {
-  // JS ajax code
-  $('#sign-up-form').on('submit', events.onSignUp)
-  $('#sign-in-form').on('submit', events.onSignIn)
-  $('#change-password-form').on('submit', events.onChangePassword)
-  $('#sign-out-button').on('click', events.onSignOut)
-  $('#new-game-button').on('click', events.onNewGame)
+  // auth events
+  $('#sign-up-form').on('submit', authEvents.onSignUp)
+  $('#sign-in-form').on('submit', authEvents.onSignIn)
+  $('#change-password-form').on('submit', authEvents.onChangePassword)
+  $('#sign-out-button').on('click', authEvents.onSignOut)
+
+  // game events
+//  $('#new-game-button').on('click', gameEvents.onNewGame)
 })
+
+// game cells
+const cells = ['0', '1', '2', '3', '4', '5', '6', '7', '8']
 
 // players
 let currentPlayer = 'X'
+
 // switching between 'X' and 'O'
 const switchPlayer = function () {
   if (currentPlayer === 'X') {
@@ -29,15 +36,17 @@ const switchPlayer = function () {
   }
 }
 
-const newTurn = function (switchPlayer) {
-
-}
+// const newTurn = function (switchPlayer) {
+//
+// }
 
 // number of games played
 // const gamesPlayed = []
 // playerOne always goes first
-// gameArray = [0,1,2,3,4,5,6,7,8]
-// const checkForWinner
+
+// const checkForWinner = function () {
+//  if ()
+// }
 
 $(() => {
   // JS game code
