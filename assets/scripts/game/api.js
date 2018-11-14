@@ -13,9 +13,9 @@ const createGame = function () {
   })
 }
 
-const updateGame = function () {
+const updateGame = function (event) {
   return $.ajax({
-    url: config.apiUrl + '/games/:id',
+    url: config.apiUrl + `/games/${store.game.id}`,
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`
@@ -24,9 +24,19 @@ const updateGame = function () {
   })
 }
 
+const gameIndex = function () {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
+  })
+}
+
 module.exports = {
   createGame,
-  updateGame
+  updateGame,
   // showGame,
-  // gameIndex
+  gameIndex
 }

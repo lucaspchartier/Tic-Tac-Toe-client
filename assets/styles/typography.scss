@@ -11,17 +11,31 @@ h1 {
 }
 
 div {
-  padding: 50px;
+  padding: 25px;
   text-align: center;
 }
 
 .success-message {
   color: $success-message-color;
+  font-size: 20px;
   text-align: center;
 }
 
 .error-message {
   color: $error-message-color;
+  font-size: 20px;
+  text-align: center;
+}
+
+.game-message {
+  color: $font-color;
+  font-size: 50px;
+  text-align: center;
+}
+
+.draw-message {
+  color: $border-color;
+  font-size: 50px;
   text-align: center;
 }
 

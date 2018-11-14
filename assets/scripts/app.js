@@ -19,7 +19,7 @@ $(() => {
 
   // Game events
   $('#create-game-button').on('click', gameEvents.onCreateGame)
-  $('#get-game-button').on('click', gameEvents.onGetGame)
+  $('#get-game-button').on('click', gameEvents.onGameIndex)
 })
 
 // Game logic
@@ -45,6 +45,7 @@ $(() => {
     switchPlayer()
     checkForXWin()
     checkForOWin()
+    // checkForDraw()
   })
   $('#1').on('click', function (event) {
     $(event.target).text(currentPlayer)
@@ -52,6 +53,7 @@ $(() => {
     switchPlayer()
     checkForXWin()
     checkForOWin()
+    // checkForDraw()
   })
   $('#2').on('click', function (event) {
     $(event.target).text(currentPlayer)
@@ -59,6 +61,7 @@ $(() => {
     switchPlayer()
     checkForXWin()
     checkForOWin()
+    // checkForDraw()
   })
   $('#3').on('click', function (event) {
     $(event.target).text(currentPlayer)
@@ -66,6 +69,7 @@ $(() => {
     switchPlayer()
     checkForXWin()
     checkForOWin()
+    // checkForDraw()
   })
   $('#4').on('click', function (event) {
     $(event.target).text(currentPlayer)
@@ -73,6 +77,7 @@ $(() => {
     switchPlayer()
     checkForXWin()
     checkForOWin()
+    // checkForDraw()
   })
   $('#5').on('click', function (event) {
     $(event.target).text(currentPlayer)
@@ -80,6 +85,7 @@ $(() => {
     switchPlayer()
     checkForXWin()
     checkForOWin()
+    // checkForDraw()
   })
   $('#6').on('click', function (event) {
     $(event.target).text(currentPlayer)
@@ -87,6 +93,7 @@ $(() => {
     switchPlayer()
     checkForXWin()
     checkForOWin()
+    // checkForDraw()
   })
   $('#7').on('click', function (event) {
     $(event.target).text(currentPlayer)
@@ -94,6 +101,7 @@ $(() => {
     switchPlayer()
     checkForXWin()
     checkForOWin()
+    // checkForDraw()
   })
   $('#8').on('click', function (event) {
     $(event.target).text(currentPlayer)
@@ -101,29 +109,30 @@ $(() => {
     switchPlayer()
     checkForXWin()
     checkForOWin()
+    // checkForDraw()
   })
 
   // Check if X wins
   const checkForXWin = function () {
     // Horizontal win
     if (cells[0] === 'X' && cells[1] === 'X' && cells[2] === 'X') {
-      $('#message').html('X WINS!')
+      $('.game-message').html('X WINS!')
     } else if (cells[3] === 'X' && cells[4] === 'X' && cells[5] === 'X') {
-      $('#message').html('X WINS!')
+      $('.game-message').html('X WINS!')
     } else if (cells[6] === 'X' && cells[7] === 'X' && cells[8] === 'X') {
-      $('#message').html('X WINS!')
+      $('.game-message').html('X WINS!')
     // Vertical win
     } else if (cells[0] === 'X' && cells[3] === 'X' && cells[6] === 'X') {
-      $('#message').html('X WINS!')
+      $('.game-message').html('X WINS!')
     } else if (cells[1] === 'X' && cells[4] === 'X' && cells[7] === 'X') {
-      $('#message').html('X WINS!')
+      $('.game-message').html('X WINS!')
     } else if (cells[2] === 'X' && cells[5] === 'X' && cells[8] === 'X') {
-      $('#message').html('X WINS!')
+      $('.game-message').html('X WINS!')
     // Diagonal win
     } else if (cells[0] === 'X' && cells[4] === 'X' && cells[8] === 'X') {
-      $('#message').html('X WINS!')
+      $('.game-message').html('X WINS!')
     } else if (cells[2] === 'X' && cells[4] === 'X' && cells[6] === 'X') {
-      $('#message').html('X WINS!')
+      $('.game-message').html('X WINS!')
     } else {
       // Display draw after all moves are taken
     }
@@ -133,25 +142,31 @@ $(() => {
   const checkForOWin = function () {
     // Horizontal win
     if (cells[0] === 'O' && cells[1] === 'O' && cells[2] === 'O') {
-      $('#message').html('O WINS!')
+      $('.game-message').html('O WINS!')
     } else if (cells[3] === 'O' && cells[4] === 'O' && cells[5] === 'O') {
-      $('#message').html('O WINS!')
+      $('.game-message').html('O WINS!')
     } else if (cells[6] === 'O' && cells[7] === 'O' && cells[8] === 'O') {
-      $('#message').html('O WINS!')
+      $('.game-message').html('O WINS!')
     // Vertical win
     } else if (cells[0] === 'O' && cells[3] === 'O' && cells[6] === 'O') {
-      $('#message').html('O WINS!')
+      $('.game-message').html('O WINS!')
     } else if (cells[1] === 'O' && cells[4] === 'O' && cells[7] === 'O') {
-      $('#message').html('O WINS!')
+      $('.game-message').html('O WINS!')
     } else if (cells[2] === 'O' && cells[5] === 'O' && cells[8] === 'O') {
-      $('#message').html('O WINS!')
+      $('.game-message').html('O WINS!')
     // Diagonal win
     } else if (cells[0] === 'O' && cells[4] === 'O' && cells[8] === 'O') {
-      $('#message').html('O WINS!')
+      $('.game-message').html('O WINS!')
     } else if (cells[2] === 'O' && cells[4] === 'O' && cells[6] === 'O') {
-      $('#message').html('O WINS!')
+      $('.game-message').html('O WINS!')
     } else {
       // Display draw after all moves are taken
     }
   }
+
+  // Check for Draw
+  // const checkForDraw = function () {
+  //  If X or O can't move
+  // if (checkforXWin && checkforOWin !== )
+  // }
 })

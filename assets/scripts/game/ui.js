@@ -3,18 +3,26 @@
 const store = require('./../store.js')
 
 const createGameSuccess = function (createGameResponse) {
-  $('#message').html('New game successfully created!')
-  $('#message').addClass('success-message')
-  $('#message').removeClass('error-message')
+  $('.auth-message').html('New game successfully created!')
+  $('.auth-message').addClass('success-message')
+  $('.auth-message').removeClass('error-message')
 }
 
 const failure = function (failureResponse) {
-  $('#message').html('Error: Something went wrong.')
-  $('#message').addClass('error-message')
-  $('#message').removeClass('success-message')
+  $('.auth-message').html('Error: Something went wrong.')
+  $('.auth-message').addClass('error-message')
+  $('.auth-message').removeClass('success-message')
+}
+
+const gameIndexSuccess = function (gameIndexResponse) {
+  store.data = gameIndexResponse.data
+  $('.auth-message').html(gameIndexResponse.games.length + ' games played.')
+  $('.auth-message').addClass('success-message')
+  $('.auth-message').removeClass('error-message')
 }
 
 module.exports = {
   createGameSuccess,
-  failure
+  failure,
+  gameIndexSuccess
 }

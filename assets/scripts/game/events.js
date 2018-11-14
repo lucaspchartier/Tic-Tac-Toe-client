@@ -12,21 +12,22 @@ const onCreateGame = function () {
 }
 
 const onUpdateGame = function () {
-  console.log('It works!')
+  event.preventDefault()
   api.updateGame()
     .then(ui.updateGameSuccess)
     .catch(ui.failure)
 }
 
-const onShowGame = function () {
-  console.log('It works!')
-  api.showGame()
-    .then(ui.showGameSuccess)
-    .catch(ui.failure)
-}
+// const onShowGame = function () {
+//  console.log('It works!')
+//  api.showGame()
+//    .then(ui.showGameSuccess)
+//    .catch(ui.failure)
+// }
 
 const onGameIndex = function () {
-  console.log('It works!')
+  event.preventDefault()
+  $('.box').text('')
   api.gameIndex()
     .then(ui.gameIndexSuccess)
     .catch(ui.failure)
@@ -35,6 +36,6 @@ const onGameIndex = function () {
 module.exports = {
   onCreateGame,
   onUpdateGame,
-  onShowGame,
+  // onShowGame,
   onGameIndex
 }
