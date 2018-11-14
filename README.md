@@ -6,12 +6,12 @@ Tic-Tac-Toe
 
 # List of technologies used.
 
-⋅⋅* HTML
-⋅⋅* CSS
-⋅⋅* JavaScript
-⋅⋅* jQuery
-⋅⋅* Boostrap
-⋅⋅* Ajax
+..* HTML
+..* CSS
+..* JavaScript
+..* jQuery
+..* Boostrap
+..* Ajax
 
 # Challenges
 
@@ -21,6 +21,6 @@ Tic-Tac-Toe
 
 ### Several issues that I intend to fix over the next couple of weeks include but are not limited to, fixing the draw function to indicate that a draw has occured between X and O, removing authentication and game messages after first appearing (i.e. after a user has signed in or a new game has been created), another issue I have also encountered that I intend to fix is the fact that a player has the ability to switch their letter on a square during a turn, which is a big no-no.
 
-### Wireframes
+# Wireframes
 
-# To be added.
+### To be added.
