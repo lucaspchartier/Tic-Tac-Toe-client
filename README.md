@@ -6,12 +6,12 @@ Tic-Tac-Toe
 
 # List of technologies used.
 
-..* HTML
-..* CSS
-..* JavaScript
-..* jQuery
-..* Boostrap
-..* Ajax
+* HTML
+* CSS
+* JavaScript
+* jQuery
+* Boostrap
+* Ajax
 
 # Challenges
 
