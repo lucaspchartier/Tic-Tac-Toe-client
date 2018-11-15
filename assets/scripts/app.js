@@ -112,7 +112,7 @@ $(() => {
     // checkForDraw()
   })
 
-  // Check if X wins
+  // Check if X wins. STORE!
   const checkForXWin = function () {
     // Horizontal win
     if (cells[0] === 'X' && cells[1] === 'X' && cells[2] === 'X') {
@@ -138,7 +138,7 @@ $(() => {
     }
   }
 
-  // Check if O wins
+  // Check if O wins. STORE!
   const checkForOWin = function () {
     // Horizontal win
     if (cells[0] === 'O' && cells[1] === 'O' && cells[2] === 'O') {
