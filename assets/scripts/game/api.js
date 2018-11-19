@@ -37,6 +37,5 @@ const gameIndex = function () {
 module.exports = {
   createGame,
   updateGame,
-  // showGame,
   gameIndex
 }

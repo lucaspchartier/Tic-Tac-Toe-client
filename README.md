@@ -23,4 +23,4 @@ Tic-Tac-Toe
 
 # Wireframes
 
-### To be added.
+[Tic Tac Toe Wireframes](https://i.imgur.com/XbA37PH.jpg)
