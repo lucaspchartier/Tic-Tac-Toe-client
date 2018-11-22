@@ -14,9 +14,13 @@ const failure = function (failureResponse) {
   $('.auth-message').removeClass('success-message')
 }
 
-const gameIndexSuccess = function (gameIndexResponse) {
-  store.data = gameIndexResponse.data
-  $('.auth-message').html(gameIndexResponse.games.length + ' games played.')
+const updateGameSuccess = function (updateGameResponse) {
+  store.user = updateGameResponse.data
+}
+
+const getGameSuccess = function (getGameResponse) {
+  store.data = getGameResponse.data
+  $('.auth-message').html(getGameResponse.games.length + ' games played.')
   $('.auth-message').addClass('success-message')
   $('.auth-message').removeClass('error-message')
 }
@@ -24,5 +28,6 @@ const gameIndexSuccess = function (gameIndexResponse) {
 module.exports = {
   createGameSuccess,
   failure,
-  gameIndexSuccess
+  updateGameSuccess,
+  getGameSuccess
 }

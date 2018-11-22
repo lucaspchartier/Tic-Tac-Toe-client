@@ -18,7 +18,7 @@ const onUpdateGame = function () {
     .catch(ui.failure)
 }
 
-const onGameIndex = function () {
+const onGetGame = function () {
   event.preventDefault()
   $('.box').text('')
   api.gameIndex()
@@ -29,5 +29,5 @@ const onGameIndex = function () {
 module.exports = {
   onCreateGame,
   onUpdateGame,
-  onGameIndex
+  onGetGame
 }

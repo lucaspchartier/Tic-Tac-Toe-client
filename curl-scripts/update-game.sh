@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl "https://tic-tac-toe-wdi.herokuapp.com/games/:id" \
+curl "https://tic-tac-toe-wdi.herokuapp.com/games/${ID}" \
   --include \
   --request PATCH \
   --header "Content-Type: application/json" \
@@ -8,8 +8,8 @@ curl "https://tic-tac-toe-wdi.herokuapp.com/games/:id" \
   --data '{
   "game": {
     "cell": {
-      "index": 1,
-      "value": "o"
+      "index": "'"${INDEX}"'",
+      "value": "'"${VALUE}"'"
     },
     "over": true
   }
