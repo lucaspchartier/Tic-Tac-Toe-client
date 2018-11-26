@@ -16,6 +16,7 @@ const failure = function (failureResponse) {
 
 const updateGameSuccess = function (updateGameResponse) {
   store.user = updateGameResponse.data
+  console.log(store.player)
 }
 
 const getGameSuccess = function (getGameResponse) {

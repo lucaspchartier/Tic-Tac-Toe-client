@@ -2,6 +2,7 @@
 
 const api = require('./api.js')
 const ui = require('./ui.js')
+// const store = require('./../store.js')
 
 const onCreateGame = function () {
   event.preventDefault()
@@ -13,6 +14,8 @@ const onCreateGame = function () {
 
 const onUpdateGame = function () {
   event.preventDefault()
+  // const player = store.player
+  // const over = store.over
   api.updateGame()
     .then(ui.updateGameSuccess)
     .catch(ui.failure)
@@ -21,8 +24,8 @@ const onUpdateGame = function () {
 const onGetGame = function () {
   event.preventDefault()
   $('.box').text('')
-  api.gameIndex()
-    .then(ui.gameIndexSuccess)
+  api.getGame()
+    .then(ui.getGameSuccess)
     .catch(ui.failure)
 }
 

@@ -10,6 +10,7 @@ const createGame = function (inputData) {
     headers: {
       Authorization: `Token token=${store.user.token}`
     },
+    contentType: 'application/json',
     data: JSON.stringify(inputData)
   })
 }
@@ -21,6 +22,7 @@ const updateGame = function (index, value, over) {
     headers: {
       Authorization: `Token token=${store.user.token}`
     },
+    contentType: 'application/json',
     data: JSON.stringify(
       {
         'game': {
@@ -35,13 +37,15 @@ const updateGame = function (index, value, over) {
   })
 }
 
-const getGame = function () {
+const getGame = function (inputData) {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'GET',
     headers: {
       Authorization: `Token token=${store.user.token}`
-    }
+    },
+    contentType: 'application/json',
+    data: JSON.stringify(inputData)
   })
 }
 
