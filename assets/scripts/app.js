@@ -8,6 +8,7 @@
 
 const authEvents = require('./auth/events.js')
 const gameEvents = require('./game/events.js')
+const gameLogic = require('./gamelogic.js')
 
 // document on ready
 $(() => {
@@ -20,5 +21,6 @@ $(() => {
   // Game events
   $('#create-game-button').on('click', gameEvents.onCreateGame)
   $('#get-game-button').on('click', gameEvents.onGetGame)
-  $('.grid').on('click', gameEvents.onUpdateGame)
+  // $('.box').on('click', gameEvents.onUpdateGame)
+  gameLogic.gameLogic()
 })

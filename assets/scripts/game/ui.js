@@ -3,6 +3,9 @@
 const store = require('./../store.js')
 
 const createGameSuccess = function (createGameResponse) {
+  // stores game in store object created by API
+  store.game = createGameResponse.game
+  store.currentPlayer = 'X'
   $('.auth-message').html('New game successfully created!')
   $('.auth-message').addClass('success-message')
   $('.auth-message').removeClass('error-message')
@@ -15,8 +18,7 @@ const failure = function (failureResponse) {
 }
 
 const updateGameSuccess = function (updateGameResponse) {
-  store.user = updateGameResponse.data
-  console.log(store.player)
+  // store.user = updateGameResponse.data
 }
 
 const getGameSuccess = function (getGameResponse) {

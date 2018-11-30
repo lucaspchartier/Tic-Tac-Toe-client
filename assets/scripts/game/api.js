@@ -4,6 +4,7 @@ const config = require('./../config.js')
 const store = require('./../store.js')
 
 const createGame = function (inputData) {
+  console.log('Game created')
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
@@ -16,6 +17,8 @@ const createGame = function (inputData) {
 }
 
 const updateGame = function (index, value, over) {
+  console.log('This is store', store)
+  console.log('This is store.game', store.game)
   return $.ajax({
     url: config.apiUrl + `/games/${store.game.id}`,
     method: 'PATCH',

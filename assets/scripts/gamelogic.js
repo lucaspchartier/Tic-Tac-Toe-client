@@ -3,89 +3,91 @@
 const store = require('./store.js')
 
 // Game logic
-$(() => {
+const gameLogic = () => {
   // Switching between 'X' and 'O'
   const switchPlayer = function () {
+    console.log('Does this work?')
     if (store.currentPlayer === 'X') {
       store.currentPlayer = 'O'
     } else {
       store.currentPlayer = 'X'
     }
+    console.log(store.currentPlayer)
   }
 
   // Gameplay code
-  $('#0').on('click', function (event) {
+  $('.grid').on('click', function (event) {
     $(event.target).text(store.currentPlayer)
-    store.cells[0] = store.currentPlayer
+    store.cells = store.currentPlayer
     switchPlayer()
     checkForXWin()
     checkForOWin()
     // checkForDraw()
   })
-  $('#1').on('click', function (event) {
-    $(event.target).text(store.currentPlayer)
-    store.cells[1] = store.currentPlayer
-    switchPlayer()
-    checkForXWin()
-    checkForOWin()
-    // checkForDraw()
-  })
-  $('#2').on('click', function (event) {
-    $(event.target).text(store.currentPlayer)
-    store.cells[2] = store.currentPlayer
-    switchPlayer()
-    checkForXWin()
-    checkForOWin()
-    // checkForDraw()
-  })
-  $('#3').on('click', function (event) {
-    $(event.target).text(store.currentPlayer)
-    store.cells[3] = store.currentPlayer
-    switchPlayer()
-    checkForXWin()
-    checkForOWin()
-    // checkForDraw()
-  })
-  $('#4').on('click', function (event) {
-    $(event.target).text(store.currentPlayer)
-    store.cells[4] = store.currentPlayer
-    switchPlayer()
-    checkForXWin()
-    checkForOWin()
-    // checkForDraw()
-  })
-  $('#5').on('click', function (event) {
-    $(event.target).text(store.currentPlayer)
-    store.cells[5] = store.currentPlayer
-    switchPlayer()
-    checkForXWin()
-    checkForOWin()
-    // checkForDraw()
-  })
-  $('#6').on('click', function (event) {
-    $(event.target).text(store.currentPlayer)
-    store.cells[6] = store.currentPlayer
-    switchPlayer()
-    checkForXWin()
-    checkForOWin()
-    // checkForDraw()
-  })
-  $('#7').on('click', function (event) {
-    $(event.target).text(store.currentPlayer)
-    store.cells[7] = store.currentPlayer
-    switchPlayer()
-    checkForXWin()
-    checkForOWin()
-    // checkForDraw()
-  })
-  $('#8').on('click', function (event) {
-    $(event.target).text(store.currentPlayer)
-    store.cells[8] = store.currentPlayer
-    switchPlayer()
-    checkForXWin()
-    checkForOWin()
-    // checkForDraw()
-  })
+  // $('#1').on('click', function (event) {
+  //   $(event.target).text(store.currentPlayer)
+  //   store.cells[1] = store.currentPlayer
+  //   switchPlayer()
+  //   checkForXWin()
+  //   checkForOWin()
+  //   // checkForDraw()
+  // })
+  // $('#2').on('click', function (event) {
+  //   $(event.target).text(store.currentPlayer)
+  //   store.cells[2] = store.currentPlayer
+  //   switchPlayer()
+  //   checkForXWin()
+  //   checkForOWin()
+  //   // checkForDraw()
+  // })
+  // $('#3').on('click', function (event) {
+  //   $(event.target).text(store.currentPlayer)
+  //   store.cells[3] = store.currentPlayer
+  //   switchPlayer()
+  //   checkForXWin()
+  //   checkForOWin()
+  //   // checkForDraw()
+  // })
+  // $('#4').on('click', function (event) {
+  //   $(event.target).text(store.currentPlayer)
+  //   store.cells[4] = store.currentPlayer
+  //   switchPlayer()
+  //   checkForXWin()
+  //   checkForOWin()
+  //   // checkForDraw()
+  // })
+  // $('#5').on('click', function (event) {
+  //   $(event.target).text(store.currentPlayer)
+  //   store.cells[5] = store.currentPlayer
+  //   switchPlayer()
+  //   checkForXWin()
+  //   checkForOWin()
+  //   // checkForDraw()
+  // })
+  // $('#6').on('click', function (event) {
+  //   $(event.target).text(store.currentPlayer)
+  //   store.cells[6] = store.currentPlayer
+  //   switchPlayer()
+  //   checkForXWin()
+  //   checkForOWin()
+  //   // checkForDraw()
+  // })
+  // $('#7').on('click', function (event) {
+  //   $(event.target).text(store.currentPlayer)
+  //   store.cells[7] = store.currentPlayer
+  //   switchPlayer()
+  //   checkForXWin()
+  //   checkForOWin()
+  //   // checkForDraw()
+  // })
+  // $('#8').on('click', function (event) {
+  //   $(event.target).text(store.currentPlayer)
+  //   store.cells[8] = store.currentPlayer
+  //   switchPlayer()
+  //   checkForXWin()
+  //   checkForOWin()
+  //   // checkForDraw()
+  // })
 
   // Check if all store.cells are taken
   // const allCellsTaken = function () {
@@ -106,6 +108,7 @@ $(() => {
   // Check if X wins.
   const checkForXWin = function () {
     // Horizontal win
+    console.log('This is what store is', store)
     if (store.cells[0] === 'X' && store.cells[1] === 'X' && store.cells[2] === 'X') {
       $('.game-message').html('X WINS!')
     } else if (store.cells[3] === 'X' && store.cells[4] === 'X' && store.cells[5] === 'X') {
@@ -221,4 +224,8 @@ $(() => {
   // }
 
   // console.log('Is there a draw?', checkForDraw())
-})
+}
+
+module.exports = {
+  gameLogic
+}

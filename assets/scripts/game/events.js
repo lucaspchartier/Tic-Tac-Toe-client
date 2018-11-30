@@ -2,11 +2,10 @@
 
 const api = require('./api.js')
 const ui = require('./ui.js')
-// const store = require('./../store.js')
+const store = require('./../store.js')
 
 const onCreateGame = function () {
   event.preventDefault()
-  $('.box').text('')
   api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.failure)
@@ -23,7 +22,6 @@ const onUpdateGame = function () {
 
 const onGetGame = function () {
   event.preventDefault()
-  $('.box').text('')
   api.getGame()
     .then(ui.getGameSuccess)
     .catch(ui.failure)

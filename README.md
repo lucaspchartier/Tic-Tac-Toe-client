@@ -21,6 +21,14 @@ Tic-Tac-Toe
 
 ### Several issues that I intend to fix over the next couple of weeks include but are not limited to, fixing the draw function to indicate that a draw has occured between X and O, removing authentication and game messages after first appearing (i.e. after a user has signed in or a new game has been created), another issue I have also encountered that I intend to fix is the fact that a player has the ability to switch their letter on a square during a turn, which is a big no-no.
 
-# Wireframes
+# Wireframes and User Stories
 
 [Tic Tac Toe Wireframes](https://i.imgur.com/XbA37PH.jpg)
+
+* User signs up
+* User logs in
+* User can change password as an option
+* User presses new game to start a new game
+* User plays and either wins or loses
+* User can retrieve how many games he has played bu pressing the get games button
+* After playing for long enough, user finally logs out.
