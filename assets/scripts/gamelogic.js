@@ -6,13 +6,12 @@ const store = require('./store.js')
 const gameLogic = () => {
   // Switching between 'X' and 'O'
   const switchPlayer = function () {
-    console.log('Does this work?')
     if (store.currentPlayer === 'X') {
       store.currentPlayer = 'O'
     } else {
       store.currentPlayer = 'X'
     }
-    console.log(store.currentPlayer)
+    console.log('In switchPlayer: This is player ', store.currentPlayer)
   }
 
   // Gameplay code

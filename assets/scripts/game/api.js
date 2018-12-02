@@ -17,6 +17,9 @@ const createGame = function (inputData) {
 }
 
 const updateGame = function (index, value, over) {
+  console.log('This is index', index)
+  console.log('This is value', value)
+  console.log('This is over', over)
   console.log('This is store', store)
   console.log('This is store.game', store.game)
   return $.ajax({
@@ -30,10 +33,10 @@ const updateGame = function (index, value, over) {
       {
         'game': {
           'cell': {
-            'index': index,
-            'value': value
+            'index': 0,
+            'value': 'x'
           },
-          'over': over
+          'over': true
         }
       }
     )

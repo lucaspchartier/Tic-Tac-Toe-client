@@ -21,6 +21,8 @@ $(() => {
   // Game events
   $('#create-game-button').on('click', gameEvents.onCreateGame)
   $('#get-game-button').on('click', gameEvents.onGetGame)
-  // $('.box').on('click', gameEvents.onUpdateGame)
+  $('.grid').on('click', function (event) {
+    gameEvents.onUpdateGame()
+  })
   gameLogic.gameLogic()
 })
