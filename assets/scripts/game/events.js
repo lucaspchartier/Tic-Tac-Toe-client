@@ -11,11 +11,8 @@ const onCreateGame = function () {
     .catch(ui.failure)
 }
 
-const onUpdateGame = function (event) {
-  event.preventDefault()
-  const index = event.target.id // if elements have id = 0
-  // console.log('store.currentPlayer is ', store.currentPlayer)
-  // console.log('store.over is ', store.over)
+const onUpdateGame = function (index) {
+  // updates API
   api.updateGame(index, store.currentPlayer, store.over)
     .then(ui.updateGameSuccess)
     .catch(ui.failure)
