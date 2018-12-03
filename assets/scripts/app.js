@@ -21,8 +21,10 @@ $(() => {
   // Game events
   $('#create-game-button').on('click', gameEvents.onCreateGame)
   $('#get-game-button').on('click', gameEvents.onGetGame)
-  $('.grid').on('click', function (event) {
-    gameEvents.onUpdateGame()
-  })
+  // Updates grid per turn
   gameLogic.gameLogic()
 })
+
+module.exports = {
+  gameLogic
+}
