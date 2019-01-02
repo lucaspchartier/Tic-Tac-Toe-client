@@ -12,7 +12,7 @@ const onCreateGame = function () {
 }
 
 const onUpdateGame = function (index) {
-  // updates API
+  // Updates API
   api.updateGame(index, store.currentPlayer, store.over)
     .then(ui.updateGameSuccess)
     .catch(ui.failure)

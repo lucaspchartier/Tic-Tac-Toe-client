@@ -3,9 +3,10 @@
 const store = require('./../store.js')
 
 const createGameSuccess = function (createGameResponse) {
-  // stores game in store object created by API
+  // Stores game in store object created by API
   store.game = createGameResponse.game
   store.currentPlayer = 'X'
+  store.cells = ['', '', '', '', '', '', '', '', '']
   $('.auth-message').html('New game successfully created!')
   $('.auth-message').addClass('success-message')
   $('.auth-message').removeClass('error-message')

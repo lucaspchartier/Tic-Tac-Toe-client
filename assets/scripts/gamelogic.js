@@ -13,6 +13,8 @@ const gameLogic = () => {
   }
   // Gameplay code
   $('.box').on('click', function (event) {
+    // IF store.over is false AND $(event.target).text() equals empty string ''
+    // then do all the game stuff as usual
     // Adds current player to board in DOM
     $(event.target).text(store.currentPlayer)
     // Gets the index player clicked on
@@ -24,20 +26,24 @@ const gameLogic = () => {
     // Checking for wins
     checkForXWin()
     checkForOWin()
+    // Check if all cells are taken
+    // allCellsTaken()
+    // ELSE show a message to user that
+    // says invalid turn $('.game-message').html('invalid turn')
   })
 
   // Check if all store.cells are taken
   // const allCellsTaken = function () {
-  // return true if store.cells are taken
-  // return (store.cells[0] === 'X' || store.cells[0] === 'O') &&
-  // (store.cells[1] === 'X' || store.cells[1] === 'O') &&
-  // (store.cells[2] === 'X' || store.cells[2] === 'O') &&
-  // (store.cells[3] === 'X' || store.cells[3] === 'O') &&
-  // (store.cells[4] === 'X' || store.cells[4] === 'O') &&
-  // (store.cells[5] === 'X' || store.cells[5] === 'O') &&
-  // (store.cells[6] === 'X' || store.cells[6] === 'O') &&
-  // (store.cells[7] === 'X' || store.cells[7] === 'O') &&
-  // (store.cells[8] === 'X' || store.cells[8] === 'O')
+  //   return (store.cells[0] === 'X' || store.cells[0] === 'O') &&
+  //   (store.cells[1] === 'X' || store.cells[1] === 'O') &&
+  //   (store.cells[2] === 'X' || store.cells[2] === 'O') &&
+  //   (store.cells[3] === 'X' || store.cells[3] === 'O') &&
+  //   (store.cells[4] === 'X' || store.cells[4] === 'O') &&
+  //   (store.cells[5] === 'X' || store.cells[5] === 'O') &&
+  //   (store.cells[6] === 'X' || store.cells[6] === 'O') &&
+  //   (store.cells[7] === 'X' || store.cells[7] === 'O') &&
+  //   (store.cells[8] === 'X' || store.cells[8] === 'O')
+  //   eturn true store.cells are taken
   // }
   // console.log('Are all the cells taken?', allCellsTaken())
 
