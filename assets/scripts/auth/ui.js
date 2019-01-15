@@ -6,12 +6,18 @@ const signUpSuccess = function (signUpResponse) {
   $('.auth-message').html('Sign up successful!')
   $('.auth-message').addClass('success-message')
   $('.auth-message').removeClass('error-message')
+  setTimeout(function () {
+    $('.auth-message').empty()
+  }, 2000)
 }
 
 const failure = function (failureResponse) {
   $('.auth-message').html('Error: Something went wrong.')
   $('.auth-message').addClass('error-message')
   $('.auth-message').removeClass('success-message')
+  setTimeout(function () {
+    $('.auth-message').empty()
+  }, 2000)
 }
 
 const signInSuccess = function (signInResponse) {
@@ -27,12 +33,18 @@ const signInSuccess = function (signInResponse) {
   $('#sign-in-form').addClass('hidden')
   $('#create-game-button').removeClass('hidden')
   $('#get-game-button').removeClass('hidden')
+  setTimeout(function () {
+    $('.auth-message').empty()
+  }, 2000)
 }
 
 const changePasswordSuccess = function (changePasswordResponse) {
   $('.auth-message').html('Password change successful!')
   $('.auth-message').addClass('success-message')
   $('.auth-message').removeClass('error-message')
+  setTimeout(function () {
+    $('.auth-message').empty()
+  }, 2000)
 }
 
 const signOutSuccess = function (signOutResponse) {
@@ -47,6 +59,9 @@ const signOutSuccess = function (signOutResponse) {
   $('#sign-in-form').removeClass('hidden')
   $('#create-game-button').addClass('hidden')
   $('#get-game-button').addClass('hidden')
+  setTimeout(function () {
+    $('.auth-message').empty()
+  }, 2000)
 }
 
 module.exports = {

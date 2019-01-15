@@ -10,12 +10,18 @@ const createGameSuccess = function (createGameResponse) {
   $('.auth-message').html('New game successfully created!')
   $('.auth-message').addClass('success-message')
   $('.auth-message').removeClass('error-message')
+  setTimeout(function () {
+    $('.auth-message').empty()
+  }, 2000)
 }
 
 const failure = function (failureResponse) {
   $('.auth-message').html('Error: Something went wrong.')
   $('.auth-message').addClass('error-message')
   $('.auth-message').removeClass('success-message')
+  setTimeout(function () {
+    $('.auth-message').empty()
+  }, 2000)
 }
 
 const updateGameSuccess = function (updateGameResponse) {
@@ -27,6 +33,9 @@ const getGameSuccess = function (getGameResponse) {
   $('.auth-message').html(getGameResponse.games.length + ' games played.')
   $('.auth-message').addClass('success-message')
   $('.auth-message').removeClass('error-message')
+  setTimeout(function () {
+    $('.auth-message').empty()
+  }, 2000)
 }
 
 module.exports = {
