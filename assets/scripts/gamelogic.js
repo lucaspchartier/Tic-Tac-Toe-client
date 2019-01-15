@@ -1,5 +1,6 @@
 'use strict'
 const store = require('./store.js')
+
 // Game logic
 const gameLogic = () => {
   // Switching between 'X' and 'O'
@@ -11,6 +12,7 @@ const gameLogic = () => {
     }
     console.log('In switchPlayer: This is player ', store.currentPlayer)
   }
+
   // Gameplay code
   $('.box').on('click', function (event) {
     // IF store.over is false AND $(event.target).text() equals empty string ''
