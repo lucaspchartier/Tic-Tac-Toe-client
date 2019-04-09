@@ -10,7 +10,7 @@ Tic-Tac-Toe
 * CSS
 * JavaScript
 * jQuery
-* Boostrap
+* Bootstrap
 * Ajax
 
 # Challenges
@@ -25,10 +25,10 @@ Tic-Tac-Toe
 
 [Tic Tac Toe Wireframes](https://i.imgur.com/XbA37PH.jpg)
 
-* User signs up
-* User logs in
-* User can change password as an option
-* User presses new game to start a new game
-* User plays and either wins or loses
-* User can retrieve how many games he has played bu pressing the get games button
-* After playing for long enough, user finally logs out.
+* As a new user, I can sign up
+* As a signed up user, I can log in
+* As a logged in user, I can press new game to start a new game
+* As a logged in user, I can play and either win or lose
+* As a logged in user, I can retrieve how many games I have played by pressing the get games button
+* As a logged in user, I can change my password at any time
+* As a logged in user, I can log out whenever I please
