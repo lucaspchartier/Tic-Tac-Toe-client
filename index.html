@@ -12,43 +12,39 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Tic Tac Toe</h1>
+      <!-- Navbar -->
+      <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">Tic Tac Toe</span>
+          <form class="form-inline">
+            <button class="btn btn-outline-warning sign-up-btn" id="sign-up-btn" type="button">Sign Up</button>
+            <button class="btn btn-outline-warning sign-in-btn" id="sign-in-btn" type="button">Log In</button>
+            <button class="btn btn-outline-warning sign-out-btn" id="sign-out-btn" type="button">Log Out</button>
+            <button class="btn btn-outline-warning change-password-btn" id="change-password-btn" type="button">Change Password</button>
+          </form>
+        </nav>
       <!-- Auth messages -->
       <div class="auth-message"></div>
-      <!-- Sign-up form starts here! -->
-      <div class="form">
-        <form id="sign-up-form">
+      <!-- Auth form -->
+      <div class="auth-form" id="auth-form">
+        <form class="sign-up-form center" id="sign-up-form">
           <legend>Sign Up</legend>
-          <input name="credentials[email]" type="text" placeholder="email"/>
-          <input name="credentials[password]" type="password" placeholder="password"/>
-          <input name="credentials[password_confirmation]" type="password" placeholder="confirm password"/>
-          <input type="submit" />
+            <input type="email" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <input type="submit" value="Sign Up">
         </form>
-        <!-- Sign-up form ends here! -->
-        <br>
-
-        <!-- Sign-in form starts here! -->
-        <form id="sign-in-form">
-          <legend>Log In</legend>
-          <input name="credentials[email]" type="text" placeholder="email"/>
-          <input name="credentials[password]" type="password" placeholder="password"/>
-          <input type="submit" />
+        <form class="sign-in-form center" id="sign-in-form">
+            <legend>Log In</legend>
+              <input type="email" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="submit" value="Log In">
         </form>
-        <!-- Sign-in form ends here! -->
-        <br>
-
-        <!-- Change password form starts here! -->
-        <form id="change-password-form" class="hidden">
+        <form class="change-password-form center" id="change-password-form" >
           <legend>Change Password</legend>
-          <input name="passwords[old]" type="password" placeholder="old password"/>
-          <input name="passwords[new]" type="password" placeholder="new password"/>
-          <input type="submit" />
+            <input class="old-password" type="password" name="passwords[old]" placeholder="Old Password">
+            <input class="new-password" type="password" name="passwords[new]" placeholder="New Password">
+            <input type="submit" value="Change Password">
         </form>
-        <!-- Change password form ends here! -->
-        <br>
-
-        <!-- Sign out button goes here! -->
-        <button id="sign-out-button" class="hidden">Log Out</button>
       </div>
 
       <div class="game-container hidden">
@@ -57,8 +53,6 @@
         <!-- Get game button goes here! -->
         <button id="get-game-button">Get Games</button>
         <br>
-        <!-- Game messages -->
-        <div class="game-message"></div>
         <!-- Grid starts here! -->
         <div class="game-board">
           <div data-cell-index=0 class="box"></div>
@@ -72,6 +66,9 @@
           <div data-cell-index=8 class="box"></div>
         </div>
         <!-- Grid ends here! -->
+
+        <!-- Game messages -->
+        <div class="game-message"></div>
       </div>
     </body>
 </html>
