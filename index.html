@@ -15,27 +15,6 @@
       <h1>Tic Tac Toe</h1>
       <!-- Auth messages -->
       <div class="auth-message"></div>
-
-      <!-- Game messages -->
-      <div class="game-message"></div>
-
-      <!-- Grid starts here! -->
-      <div class="grid hidden">
-        <div class="row">
-          <div id = "0" class="col-4 col-lg-4 box teal" data-index=0></div>
-          <div id = "1" class="col-4 col-lg-4 box teal" data-index=1></div>
-          <div id = "2" class="col-4 col-lg-4 box teal" data-index=2></div>
-          <div id = "3" class="col-4 col-lg-4 box teal" data-index=3></div>
-          <div id = "4" class="col-4 col-lg-4 box teal" data-index=4></div>
-          <div id = "5" class="col-4 col-lg-4 box teal" data-index=5></div>
-          <div id = "6" class="col-4 col-lg-4 box teal" data-index=6></div>
-          <div id = "7" class="col-4 col-lg-4 box teal" data-index=7></div>
-          <div id = "8" class="col-4 col-lg-4 box teal" data-index=8></div>
-        </div>
-      </div>
-      <!-- Grid ends here! -->
-      <br>
-
       <!-- sign-up form starts here! -->
       <div class="form">
         <form id="sign-up-form">
@@ -70,12 +49,29 @@
 
         <!-- sign out button goes here! -->
         <button id="sign-out-button" class="hidden">Log Out</button>
+      </div>
 
+      <div class="game-container hidden">
+        <!-- Game messages -->
+        <div class="game-message"></div>
+        <!-- Grid starts here! -->
+        <div class="game-board">
+          <div data-cell-index=0 class="box"></div>
+          <div data-cell-index=1 class="box"></div>
+          <div data-cell-index=2 class="box"></div>
+          <div data-cell-index=3 class="box"></div>
+          <div data-cell-index=4 class="box"></div>
+          <div data-cell-index=5 class="box"></div>
+          <div data-cell-index=6 class="box"></div>
+          <div data-cell-index=7 class="box"></div>
+          <div data-cell-index=8 class="box"></div>
+        </div>
+        <!-- Grid ends here! -->
+        <br>
         <!-- create game button goes here! -->
-        <button id="create-game-button" class="hidden">New Game</button>
-
+        <button id="create-game-button">New Game</button>
         <!-- get game button goes here! -->
-        <button id="get-game-button" class="hidden">Get Games</button>
+        <button id="get-game-button">Get Games</button>
       </div>
     </body>
 </html>
