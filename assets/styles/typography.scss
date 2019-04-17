@@ -43,19 +43,24 @@ div {
   visibility: hidden;
 }
 
-.box {
-  align-items: center;
+.game-board {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  height: 300px;
+  width: 300px;
+  margin: 0 auto;
   border: 1px solid $border-color;
   color: $background-color;
-  display: flex;
   font-size: 50px;
-  height: 80px;
   justify-content: center;
   padding: 100px;
 }
 
-.teal {
-  background-color: $font-color;
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:$font-color;
 }
 
 .form {
