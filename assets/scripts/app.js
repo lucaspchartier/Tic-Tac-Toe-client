@@ -8,7 +8,7 @@
 
 const authEvents = require('./auth/events.js')
 const gameEvents = require('./game/events.js')
-const gameLogic = require('./gamelogic.js')
+const gameLogic = require('./game/gamelogic.js')
 
 // document on ready
 $(() => {
