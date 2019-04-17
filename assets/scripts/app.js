@@ -8,7 +8,6 @@
 
 const authEvents = require('./auth/events.js')
 const gameEvents = require('./game/events.js')
-const gameLogic = require('./game/gamelogic.js')
 
 // document on ready
 $(() => {
@@ -16,15 +15,22 @@ $(() => {
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#change-password-form').on('submit', authEvents.onChangePassword)
-  $('#sign-out-button').on('click', authEvents.onSignOut)
+  $('#sign-out-btn').on('click', authEvents.onSignOut)
 
   // Game events
   $('#create-game-button').on('click', gameEvents.onCreateGame)
   $('#get-game-button').on('click', gameEvents.onGetGame)
-  // Updates grid per turn
-  gameLogic.gameLogic()
 })
 
-module.exports = {
-  gameLogic
-}
+// Form toggles
+$('#sign-up-btn').click(function () {
+  $('.sign-up-form').slideDown(300)
+  $('.sign-in-form').slideUp(500)
+})
+$('#sign-in-btn').click(function () {
+  $('.sign-in-form').slideDown(300)
+  $('.sign-up-form').slideUp(500)
+})
+$('#change-password-btn').click(function () {
+  $('.change-password-form').slideDown(500)
+})
