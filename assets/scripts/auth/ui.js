@@ -55,7 +55,7 @@ const changePasswordSuccess = function (changePasswordResponse) {
 }
 
 const signOutSuccess = function (signOutResponse) {
-  store.over = true
+  store.game.over = true
   $('.auth-message').html('Logged out successfully!')
   $('.auth-message').removeClass('error-message')
   $('.auth-message').addClass('success-message')
