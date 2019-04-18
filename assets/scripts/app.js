@@ -18,8 +18,8 @@ $(() => {
   $('#sign-out-btn').on('click', authEvents.onSignOut)
 
   // Game events
-  $('#create-game-button').on('click', gameEvents.onCreateGame)
-  $('#get-game-button').on('click', gameEvents.onGetGame)
+  $('#create-game-btn').on('click', gameEvents.onCreateGame)
+  $('#get-games-btn').on('click', gameEvents.onGetGame)
 })
 
 // Form toggles
