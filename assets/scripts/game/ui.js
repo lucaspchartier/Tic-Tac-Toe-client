@@ -34,7 +34,7 @@ const getGamesSuccess = function (getGamesResponse) {
 }
 
 const updateGameSuccess = function (updateGameResponse) {
-  // store.user = updateGameResponse.data
+
 }
 
 module.exports = {
