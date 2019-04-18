@@ -131,8 +131,8 @@ div {
 .game-board {
   display: grid;
   grid-template: repeat(3, 1fr) / repeat(3, 1fr);
-  height: 500px;
-  width: 500px;
+  height: 550px;
+  width: 550px;
   margin: 0 auto;
   color: $background-color;
   font-size: 50px;
@@ -158,6 +158,13 @@ div {
   width: 100%;
 }
 
+button,
+html [type="button"], [type="reset"], [type="submit"] {
+  -webkit-appearance: button;
+  background-color: #009ca1;
+  color: #0d2b5b;
+}
+
 #sign-up-form {
   color: $font-color;
   text-align: center;
@@ -171,9 +178,4 @@ div {
 #change-password-form {
   color: $font-color;
   text-align: center;
-}
-
-#sign-out-button {
-  margin: 0;
-  position: relative;
 }
