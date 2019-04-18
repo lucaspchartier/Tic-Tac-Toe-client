@@ -38,6 +38,10 @@ const signInSuccess = function (signInResponse) {
   setTimeout(function () {
     $('.auth-message').empty()
   }, 2000)
+  $('.game-message').html('Please press new game to start a game!')
+  setTimeout(function () {
+    $('.game-message').empty()
+  }, 5000)
 }
 
 const changePasswordSuccess = function (changePasswordResponse) {
