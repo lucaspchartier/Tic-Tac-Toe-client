@@ -2,104 +2,75 @@
 
 const store = require('../store.js')
 
-const switchPlayer = function () {
-  if (store.currentPlayer === 'X') {
-    store.currentPlayer = 'O'
-  } else {
-    store.currentPlayer = 'X'
+const switchPlayer = function (playerTurn) {
+  if (store.invalid === true) {
+    return
   }
-  console.log('This is player ', store.currentPlayer)
-}
-
-$('.box').on('click', function (event) {
-  // IF store.over is false AND $(event.target).text() equals empty string ''
-  // then do all the game stuff as usual
-  // Adds current player to board in DOM
-  $(event.target).text(store.currentPlayer)
-  // Gets the index player clicked on
-  const index = event.target.id // get index from the div's id="" attribute
-  // Adds currentPlayer to the board array
-  store.cells[index] = store.currentPlayer
-  // Switching players
-  switchPlayer()
-  // Checking for wins
-  checkForXWin()
-  checkForOWin()
-  // Check if all cells are taken
-  // allCellsTaken()
-  // ELSE show a message to user that
-  // says invalid turn $('.game-message').html('invalid turn')
-})
-
-// Check if X wins.
-const checkForXWin = function () {
-  // Horizontal win
-  console.log('This is what store is', store)
-  if (store.cells[0] === 'X' && store.cells[1] === 'X' && store.cells[2] === 'X') {
-    $('.game-message').html('X WINS!')
-    store.over = true
-  } else if (store.cells[3] === 'X' && store.cells[4] === 'X' && store.cells[5] === 'X') {
-    $('.game-message').html('X WINS!')
-    store.over = true
-  } else if (store.cells[6] === 'X' && store.cells[7] === 'X' && store.cells[8] === 'X') {
-    $('.game-message').html('X WINS!')
-    store.over = true
-  // Vertical win
-  } else if (store.cells[0] === 'X' && store.cells[3] === 'X' && store.cells[6] === 'X') {
-    $('.game-message').html('X WINS!')
-    store.over = true
-  } else if (store.cells[1] === 'X' && store.cells[4] === 'X' && store.cells[7] === 'X') {
-    $('.game-message').html('X WINS!')
-    store.over = true
-  } else if (store.cells[2] === 'X' && store.cells[5] === 'X' && store.cells[8] === 'X') {
-    $('.game-message').html('X WINS!')
-    store.over = true
-  // Diagonal win
-  } else if (store.cells[0] === 'X' && store.cells[4] === 'X' && store.cells[8] === 'X') {
-    $('.game-message').html('X WINS!')
-    store.over = true
-  } else if (store.cells[2] === 'X' && store.cells[4] === 'X' && store.cells[6] === 'X') {
-    $('.game-message').html('X WINS!')
-    store.over = true
-  } else {
-  // Display draw after all moves are taken
+  if (store.invalid === false) {
+    const player = playerTurn === 'X' ? 'O' : 'X'
+    store.player = player
+    $('.game-message').html(`${store.player}'s turn`)
+    setTimeout(function () {
+      $('.game-message').empty()
+    }, 2000)
+    return player
   }
 }
 
-// Check if O wins.
-const checkForOWin = function () {
-  // Horizontal win
-  if (store.cells[0] === 'O' && store.cells[1] === 'O' && store.cells[2] === 'O') {
-    $('.game-message').html('O WINS!')
-    store.over = true
-  } else if (store.cells[3] === 'O' && store.cells[4] === 'O' && store.cells[5] === 'O') {
-    $('.game-message').html('O WINS!')
-    store.over = true
-  } else if (store.cells[6] === 'O' && store.cells[7] === 'O' && store.cells[8] === 'O') {
-    $('.game-message').html('O WINS!')
-    store.over = true
-  // Vertical win
-  } else if (store.cells[0] === 'O' && store.cells[3] === 'O' && store.cells[6] === 'O') {
-    $('.game-message').html('O WINS!')
-    store.over = true
-  } else if (store.cells[1] === 'O' && store.cells[4] === 'O' && store.cells[7] === 'O') {
-    $('.game-message').html('O WINS!')
-    store.over = true
-  } else if (store.cells[2] === 'O' && store.cells[5] === 'O' && store.cells[8] === 'O') {
-    $('.game-message').html('O WINS!')
-    store.over = true
-  // Diagonal win
-  } else if (store.cells[0] === 'O' && store.cells[4] === 'O' && store.cells[8] === 'O') {
-    $('.game-message').html('O WINS!')
-    store.over = true
-  } else if (store.cells[2] === 'O' && store.cells[4] === 'O' && store.cells[6] === 'O') {
-    $('.game-message').html('O WINS!')
-    store.over = true
-  } else {
-  // Display draw after all moves are taken
+const gameBoard = function (id, value, over) {
+  if (over === true) {
+    return
+  }
+  if (store.game.cells[id] === '') {
+    store.game.cells[id] = value
+    store.invalid = false
+  } else if (store.game.cells[id] === 'X' || 'O') {
+    $('.game-message').html('Box already clicked')
+    $('.game-message').fadeOut(500)
+    store.invalid = true
+  }
+}
+
+const gameOver = function (cell) {
+  if ((cell[0] === 'X' && cell[1] === 'X' && cell[2] === 'X') ||
+    (cell[3] === 'X' && cell[4] === 'X' && cell[5] === 'X') ||
+    (cell[6] === 'X' && cell[7] === 'X' && cell[8] === 'X') ||
+    (cell[0] === 'X' && cell[3] === 'X' && cell[6] === 'X') ||
+    (cell[1] === 'X' && cell[4] === 'X' && cell[7] === 'X') ||
+    (cell[2] === 'X' && cell[5] === 'X' && cell[8] === 'X') ||
+    (cell[0] === 'X' && cell[4] === 'X' && cell[8] === 'X') ||
+    (cell[2] === 'X' && cell[4] === 'X' && cell[6] === 'X')) {
+    store.game.over = true
+    store.player = 'X'
+    store.winner = 'X'
+    // X wins!
+    $('.game-message').html('X wins!')
+  } else if ((cell[0] === 'O' && cell[1] === 'O' && cell[2] === 'O') ||
+    (cell[3] === 'O' && cell[4] === 'O' && cell[5] === 'O') ||
+    (cell[6] === 'O' && cell[7] === 'O' && cell[8] === 'O') ||
+    (cell[0] === 'O' && cell[3] === 'O' && cell[6] === 'O') ||
+    (cell[1] === 'O' && cell[4] === 'O' && cell[7] === 'O') ||
+    (cell[2] === 'O' && cell[5] === 'O' && cell[8] === 'O') ||
+    (cell[0] === 'O' && cell[4] === 'O' && cell[8] === 'O') ||
+    (cell[2] === 'O' && cell[4] === 'O' && cell[6] === 'O')) {
+    store.game.over = true
+    store.player = 'X'
+    store.winner = 'O'
+    // O wins!
+    $('.game-message').html('O wins!')
+  } else if (cell[0] !== '' && cell[1] !== '' && cell[2] !== '' &&
+    cell[3] !== '' && cell[4] !== '' && cell[5] !== '' &&
+    cell[6] !== '' && cell[7] !== '' && cell[8] !== '') {
+    store.game.over = true
+    store.player = 'X'
+    store.winner = 'Tie'
+    // Tie game.
+    $('.game-message').html('It\'s a tie!')
   }
 }
 
 module.exports = {
-  switchPlayer
+  switchPlayer,
+  gameBoard,
+  gameOver
 }
