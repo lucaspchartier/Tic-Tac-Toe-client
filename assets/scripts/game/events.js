@@ -1,8 +1,9 @@
 'use strict'
 
+const store = require('./../store.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
-const store = require('./../store.js')
+const logic = require('./logic.js')
 
 const onCreateGame = function () {
   event.preventDefault()
@@ -18,8 +19,9 @@ const onGetGames = function () {
     .catch(ui.failure)
 }
 
-const onUpdateGame = function (index) {
-  api.updateGame(index, store.currentPlayer, store.over)
+const onUpdateGame = function (event) {
+  event.preventDefault()
+  api.updateGame(event, store.currentPlayer, store.over)
     .then(ui.updateGameSuccess)
     .catch(ui.failure)
 }

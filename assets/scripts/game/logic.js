@@ -8,7 +8,7 @@ const switchPlayer = function () {
   } else {
     store.currentPlayer = 'X'
   }
-  console.log('In switchPlayer: This is player ', store.currentPlayer)
+  console.log('This is player ', store.currentPlayer)
 }
 
 $('.box').on('click', function (event) {
