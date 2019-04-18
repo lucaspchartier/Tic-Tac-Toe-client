@@ -9,6 +9,7 @@ const createGameSuccess = function (createGameResponse) {
   $('.auth-message').html('New game successfully created!')
   $('.auth-message').addClass('success-message')
   $('.auth-message').removeClass('error-message')
+  $('.box').empty()
   setTimeout(function () {
     $('.auth-message').empty()
   }, 2000)
