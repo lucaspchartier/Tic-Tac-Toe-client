@@ -19,7 +19,6 @@ const onGetGames = function () {
 }
 
 const onUpdateGame = function (index) {
-  console.log('This is onUpdateGame ', onUpdateGame)
   api.updateGame(index, store.currentPlayer, store.over)
     .then(ui.updateGameSuccess)
     .catch(ui.failure)

@@ -28,7 +28,6 @@ const getGames = function (inputData) {
 }
 
 const updateGame = function (index, value, over) {
-  console.log('This is updateGame', updateGame)
   console.log('This is index', index)
   console.log('This is value', value)
   console.log('This is over', over)

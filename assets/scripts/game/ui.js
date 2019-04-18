@@ -34,7 +34,6 @@ const getGamesSuccess = function (getGamesResponse) {
 }
 
 const updateGameSuccess = function (updateGameResponse) {
-  console.log('This is updateGameSuccess ', updateGameSuccess)
   // store.user = updateGameResponse.data
 }
 
