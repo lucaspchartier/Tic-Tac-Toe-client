@@ -32,6 +32,8 @@ const signInSuccess = function (signInResponse) {
   $('#sign-out-btn').show()
   $('#sign-up-btn').hide()
   $('#sign-in-btn').hide()
+  $('#create-game-btn').show()
+  $('#get-games-btn').show()
   $('.game-container').removeClass('hidden')
   setTimeout(function () {
     $('.auth-message').empty()
@@ -50,16 +52,18 @@ const changePasswordSuccess = function (changePasswordResponse) {
 
 const signOutSuccess = function (signOutResponse) {
   store.over = true
-  $('#game-message').html('Logged out successfully!')
-  $('#game-message').removeClass('error-message')
-  $('#game-message').addClass('success-message')
-  $('#change-password-btn').hide()
+  $('.auth-message').html('Logged out successfully!')
+  $('.auth-message').removeClass('error-message')
+  $('.auth-message').addClass('success-message')
+  $('#change-password-form').trigger('reset')
   $('#change-password-form').slideUp(500)
+  $('#change-password-btn').hide()
   $('#sign-out-btn').hide()
   $('#sign-up-btn').show()
   $('#sign-in-btn').show()
-  $('.game-container').fadeOut(500)
-  $('#change-password-form').trigger('reset')
+  $('#create-game-btn').hide()
+  $('#get-games-btn').hide()
+  $('.game-container').addClass('hidden')
   setTimeout(function () {
     $('.auth-message').empty()
   }, 2000)
