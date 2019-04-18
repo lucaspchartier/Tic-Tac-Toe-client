@@ -21,9 +21,15 @@ const onGetGames = function () {
 
 const onUpdateGame = function (event) {
   event.preventDefault()
-  api.updateGame(event, store.currentPlayer, store.over)
+  const data = $(event.target).data().cellIndex
+  const player = store.player
+  const over = store.game.over
+  api.updateGame(data, player)
     .then(ui.updateGameSuccess)
     .catch(ui.failure)
+  logic.gameBoard(data, player, over)
+  logic.switchPlayer(player)
+  logic.gameOver(store.game.cells)
 }
 
 module.exports = {
