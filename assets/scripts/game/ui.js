@@ -4,8 +4,10 @@ const store = require('./../store.js')
 
 const createGameSuccess = function (createGameResponse) {
   store.game = createGameResponse.game
-  store.currentPlayer = 'X'
-  store.cells = ['', '', '', '', '', '', '', '', '']
+  // store.games = createGameResponse
+  // store.game = createGameResponse.game.id
+  // store.game.cells = createGameResponse.game.cells
+  store.player = 'X'
   $('.auth-message').html('New game successfully created!')
   $('.auth-message').addClass('success-message')
   $('.auth-message').removeClass('error-message')
@@ -35,7 +37,12 @@ const getGamesSuccess = function (getGamesResponse) {
 }
 
 const updateGameSuccess = function (updateGameResponse) {
-
+  console.log('This is updateGameResponse ', updateGameResponse)
+  if (store.player === 'X' && store.game.over === false && store.game.cells === '') {
+    $(event.target).html('X')
+  } else if (store.player === 'O' && store.game.over === false && store.game.cells === '') {
+    $(event.target).html('O')
+  }
 }
 
 module.exports = {
