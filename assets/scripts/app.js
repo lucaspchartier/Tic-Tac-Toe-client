@@ -19,7 +19,7 @@ $(() => {
 
   // Game events
   $('#create-game-btn').on('click', gameEvents.onCreateGame)
-  $('#get-games-btn').on('click', gameEvents.onGetGame)
+  $('#get-games-btn').on('click', gameEvents.onGetGames)
 
   // Form toggles
   $('#sign-up-btn').click(function () {
