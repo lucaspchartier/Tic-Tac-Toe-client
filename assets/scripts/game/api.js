@@ -27,10 +27,8 @@ const getGames = function (inputData) {
   })
 }
 
-const updateGame = function (index, value, over) {
-  console.log('This is index', index)
+const updateGame = function (index, value) {
   console.log('This is value', value)
-  console.log('This is over', over)
   return $.ajax({
     url: config.apiUrl + `/games/${store.game.id}`,
     method: 'PATCH',
