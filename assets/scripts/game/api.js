@@ -15,7 +15,20 @@ const createGame = function (inputData) {
   })
 }
 
+const getGames = function (inputData) {
+  return $.ajax({
+    url: config.apiUrl + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    contentType: 'application/json',
+    data: JSON.stringify(inputData)
+  })
+}
+
 const updateGame = function (index, value, over) {
+  console.log('This is updateGame', updateGame)
   console.log('This is index', index)
   console.log('This is value', value)
   console.log('This is over', over)
@@ -40,20 +53,8 @@ const updateGame = function (index, value, over) {
   })
 }
 
-const getGame = function (inputData) {
-  return $.ajax({
-    url: config.apiUrl + '/games',
-    method: 'GET',
-    headers: {
-      Authorization: `Token token=${store.user.token}`
-    },
-    contentType: 'application/json',
-    data: JSON.stringify(inputData)
-  })
-}
-
 module.exports = {
   createGame,
-  updateGame,
-  getGame
+  getGames,
+  updateGame
 }

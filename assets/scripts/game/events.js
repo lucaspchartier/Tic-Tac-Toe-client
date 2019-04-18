@@ -11,22 +11,22 @@ const onCreateGame = function () {
     .catch(ui.failure)
 }
 
+const onGetGames = function () {
+  event.preventDefault()
+  api.getGames()
+    .then(ui.getGamesSuccess)
+    .catch(ui.failure)
+}
+
 const onUpdateGame = function (index) {
-  // Updates API
+  console.log('This is onUpdateGame ', onUpdateGame)
   api.updateGame(index, store.currentPlayer, store.over)
     .then(ui.updateGameSuccess)
     .catch(ui.failure)
 }
 
-const onGetGame = function () {
-  event.preventDefault()
-  api.getGame()
-    .then(ui.getGameSuccess)
-    .catch(ui.failure)
-}
-
 module.exports = {
   onCreateGame,
-  onUpdateGame,
-  onGetGame
+  onGetGames,
+  onUpdateGame
 }

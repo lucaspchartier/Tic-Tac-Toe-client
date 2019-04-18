@@ -3,7 +3,6 @@
 const store = require('./../store.js')
 
 const createGameSuccess = function (createGameResponse) {
-  // Stores game in store object created by API
   store.game = createGameResponse.game
   store.currentPlayer = 'X'
   store.cells = ['', '', '', '', '', '', '', '', '']
@@ -24,13 +23,9 @@ const failure = function (failureResponse) {
   }, 2000)
 }
 
-const updateGameSuccess = function (updateGameResponse) {
-  // store.user = updateGameResponse.data
-}
-
-const getGameSuccess = function (getGameResponse) {
-  store.data = getGameResponse.data
-  $('.auth-message').html(getGameResponse.games.length + ' games played.')
+const getGamesSuccess = function (getGamesResponse) {
+  store.data = getGamesResponse.data
+  $('.auth-message').html(getGamesResponse.games.length + ' games played.')
   $('.auth-message').addClass('success-message')
   $('.auth-message').removeClass('error-message')
   setTimeout(function () {
@@ -38,9 +33,14 @@ const getGameSuccess = function (getGameResponse) {
   }, 2000)
 }
 
+const updateGameSuccess = function (updateGameResponse) {
+  console.log('This is updateGameSuccess ', updateGameSuccess)
+  // store.user = updateGameResponse.data
+}
+
 module.exports = {
   createGameSuccess,
   failure,
-  updateGameSuccess,
-  getGameSuccess
+  getGamesSuccess,
+  updateGameSuccess
 }
