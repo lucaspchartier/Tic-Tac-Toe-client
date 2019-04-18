@@ -20,17 +20,17 @@ $(() => {
   // Game events
   $('#create-game-btn').on('click', gameEvents.onCreateGame)
   $('#get-games-btn').on('click', gameEvents.onGetGame)
-})
 
-// Form toggles
-$('#sign-up-btn').click(function () {
-  $('.sign-up-form').slideDown(300)
-  $('.sign-in-form').slideUp(500)
-})
-$('#sign-in-btn').click(function () {
-  $('.sign-in-form').slideDown(300)
-  $('.sign-up-form').slideUp(500)
-})
-$('#change-password-btn').click(function () {
-  $('.change-password-form').slideDown(500)
+  // Form toggles
+  $('#sign-up-btn').click(function () {
+    $('.sign-up-form').slideDown(300)
+    $('.sign-in-form').slideUp(500)
+  })
+  $('#sign-in-btn').click(function () {
+    $('.sign-in-form').slideDown(300)
+    $('.sign-up-form').slideUp(500)
+  })
+  $('#change-password-btn').click(function () {
+    $('.change-password-form').slideDown(500)
+  })
 })
