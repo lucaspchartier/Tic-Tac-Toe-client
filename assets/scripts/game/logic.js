@@ -17,7 +17,7 @@ const gameBoard = function (id, value, over) {
     store.game.cells[id] = value
     store.invalid = false
   } else if (store.game.cells[id] === 'X' || 'O') {
-    $('.game-message').html('Box already clicked').fadeOut(2000)
+    $('.game-message').html('Box has already been taken.').fadeOut(2000)
     store.invalid = true
   }
 }
