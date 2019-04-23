@@ -10,7 +10,7 @@ const switchPlayer = function () {
 }
 
 const gameBoard = function (id, value, over) {
-  if (over === true) {
+  if (store.game.over === true) {
     return
   }
   if (store.game.cells[id] === '') {
