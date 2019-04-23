@@ -7,18 +7,14 @@ const signUpSuccess = function (signUpResponse) {
   $('.auth-message').addClass('success-message')
   $('.auth-message').removeClass('error-message')
   $('.sign-up-form').slideUp(500)
-  setTimeout(function () {
-    $('.auth-message').empty()
-  }, 2000)
+  setTimeout(() => $('.auth-message').empty(), 2000)
 }
 
 const failure = function (failureResponse) {
   $('.auth-message').html('Error: Something went wrong.')
   $('.auth-message').addClass('error-message')
   $('.auth-message').removeClass('success-message')
-  setTimeout(function () {
-    $('.auth-message').empty()
-  }, 2000)
+  setTimeout(() => $('.auth-message').empty(), 2000)
 }
 
 const signInSuccess = function (signInResponse) {
@@ -35,13 +31,9 @@ const signInSuccess = function (signInResponse) {
   $('#create-game-btn').show()
   $('#get-games-btn').show()
   $('.game-container').removeClass('hidden')
-  setTimeout(function () {
-    $('.auth-message').empty()
-  }, 2000)
+  setTimeout(() => $('.auth-message').empty(), 2000)
   $('.game-message').html('Please press new game to start a game!')
-  setTimeout(function () {
-    $('.game-message').empty()
-  }, 5000)
+  setTimeout(() => $('.game-message').empty(), 5000)
 }
 
 const changePasswordSuccess = function (changePasswordResponse) {
@@ -49,9 +41,7 @@ const changePasswordSuccess = function (changePasswordResponse) {
   $('.auth-message').addClass('success-message')
   $('.auth-message').removeClass('error-message')
   $('#change-password-form').slideUp(500)
-  setTimeout(function () {
-    $('.auth-message').empty()
-  }, 2000)
+  setTimeout(() => $('.auth-message').empty(), 2000)
 }
 
 const signOutSuccess = function (signOutResponse) {
@@ -68,9 +58,7 @@ const signOutSuccess = function (signOutResponse) {
   $('#create-game-btn').hide()
   $('#get-games-btn').hide()
   $('.game-container').addClass('hidden')
-  setTimeout(function () {
-    $('.auth-message').empty()
-  }, 2000)
+  setTimeout(() => $('.auth-message').empty(), 2000)
 }
 
 module.exports = {

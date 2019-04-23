@@ -10,18 +10,14 @@ const createGameSuccess = function (createGameResponse) {
   $('.auth-message').addClass('success-message')
   $('.auth-message').removeClass('error-message')
   $('.box').empty()
-  setTimeout(function () {
-    $('.auth-message').empty()
-  }, 2000)
+  setTimeout(() => $('.auth-message').empty(), 2000)
 }
 
 const failure = function (failureResponse) {
   $('.auth-message').html('Error: Something went wrong.')
   $('.auth-message').addClass('error-message')
   $('.auth-message').removeClass('success-message')
-  setTimeout(function () {
-    $('.auth-message').empty()
-  }, 2000)
+  setTimeout(() => $('.auth-message').empty(), 2000)
 }
 
 const getGamesSuccess = function (getGamesResponse) {
@@ -29,9 +25,7 @@ const getGamesSuccess = function (getGamesResponse) {
   $('.auth-message').html(getGamesResponse.games.length + ' games played.')
   $('.auth-message').addClass('success-message')
   $('.auth-message').removeClass('error-message')
-  setTimeout(function () {
-    $('.auth-message').empty()
-  }, 2000)
+  setTimeout(() => $('.auth-message').empty(), 2000)
 }
 
 const updateGameSuccess = function (updateGameResponse, event, id, player, over) {
@@ -41,9 +35,12 @@ const updateGameSuccess = function (updateGameResponse, event, id, player, over)
   } else if (store.player === 'O' && store.game.over === false && store.game.cells[id] === '') {
     $(event.target).html('O')
   }
-  logic.gameBoard(id, player, over)
-  logic.switchPlayer(player)
+  logic.gameBoard(id, store.player, store.game.over)
+  logic.switchPlayer(store.player)
   logic.gameOver(store.game.cells)
+  console.log('This is updateGameResponse ', updateGameResponse)
+  console.log('This is store.player ', store.player)
+  console.log('This is store.game.over ', store.game.over)
 }
 
 module.exports = {
