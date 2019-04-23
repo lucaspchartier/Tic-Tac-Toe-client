@@ -21,7 +21,7 @@ const onGetGames = function () {
 
 const onUpdateGame = function (event) {
   event.preventDefault()
-  const data = $(event.target).data().cellIndex
+  const data = $(event.target).data('cell-index')
   const player = store.player
   const over = store.game.over
   api.updateGame(data, player)
