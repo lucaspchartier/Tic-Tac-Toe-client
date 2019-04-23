@@ -37,12 +37,9 @@ const updateGameSuccess = function (updateGameResponse, event, id, player, over)
   } else if (store.player === 'O' && store.game.over === false) {
     $(event.target).html('O')
   }
-  logic.gameBoard(id, store.player, store.game.over)
   logic.switchPlayer(store.player)
   logic.gameOver(store.game.cells)
-  console.log('This is updateGameResponse ', updateGameResponse)
   console.log('This is store.player ', store.player)
-  console.log('This is store.game.over ', store.game.over)
 }
 
 module.exports = {
