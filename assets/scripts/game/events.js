@@ -21,6 +21,7 @@ const onGetGames = function () {
 
 const onUpdateGame = function (event) {
   event.preventDefault()
+  if ($(event.target).text()) return
   const id = $(event.target).data('cell-index')
   const player = store.player
   const over = store.game.over
