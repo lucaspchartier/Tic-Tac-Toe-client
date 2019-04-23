@@ -3,6 +3,7 @@
 const api = require('./api.js')
 const ui = require('./ui.js')
 const store = require('./../store.js')
+const logic = require('./logic.js')
 
 const onCreateGame = function () {
   event.preventDefault()
@@ -26,6 +27,7 @@ const onUpdateGame = function (event) {
   api.updateGame(id, player, over)
     .then(updateGameResponse => ui.updateGameSuccess(updateGameResponse, event, id, player, over))
     .catch(ui.failure)
+  logic.gameBoard(id, store.player, store.game.over)
 }
 
 module.exports = {
