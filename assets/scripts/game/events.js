@@ -24,7 +24,7 @@ const onUpdateGame = function (event) {
   const player = store.player
   const over = store.game.over
   api.updateGame(id, player, over)
-    .then(responseData => ui.updateGameSuccess(responseData, event, id))
+    .then(updateGameResponse => ui.updateGameSuccess(updateGameResponse, event, id, player, over))
     .catch(ui.failure)
 }
 

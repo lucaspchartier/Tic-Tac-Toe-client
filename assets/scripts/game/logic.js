@@ -2,19 +2,11 @@
 
 const store = require('../store.js')
 
-const switchPlayer = function (playerTurn) {
-  if (store.invalid === true) {
-    return
-  }
-  if (store.invalid === false) {
-    const player = playerTurn === 'X' ? 'O' : 'X'
-    store.player = player
-    $('.game-message').html(`${store.player}'s turn`)
-    setTimeout(function () {
-      $('.game-message').empty()
-    }, 2000)
-    return player
-  }
+const switchPlayer = function () {
+  if (store.invalid) { return }
+  store.player = store.player === 'X' ? 'O' : 'X'
+  $('.game-message').html(`${store.player}'s turn`)
+  setTimeout(() => $('.game-message').empty(), 2000)
 }
 
 const gameBoard = function (id, value, over) {
