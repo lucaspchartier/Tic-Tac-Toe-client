@@ -22,7 +22,7 @@ const failure = function (failureResponse) {
 
 const getGamesSuccess = function (getGamesResponse) {
   store.data = getGamesResponse.data
-  $('.auth-message').html(getGamesResponse.games.length + ' games played.')
+  $('.game-message').html(getGamesResponse.games.length + ' games played.')
   $('.auth-message').addClass('success-message')
   $('.auth-message').removeClass('error-message')
   setTimeout(() => $('.auth-message').empty(), 2000)
