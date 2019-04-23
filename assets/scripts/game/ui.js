@@ -30,9 +30,11 @@ const getGamesSuccess = function (getGamesResponse) {
 
 const updateGameSuccess = function (updateGameResponse, event, id, player, over) {
   store.game.cells = updateGameResponse.game.cells
-  if (store.player === 'X' && store.game.over === false && store.game.cells[id] === '') {
+  console.log('This is store.game.cells ', store.game.cells)
+  console.log('This is store.game.cells[id] ', store.game.cells[id])
+  if (store.player === 'X' && store.game.over === false) {
     $(event.target).html('X')
-  } else if (store.player === 'O' && store.game.over === false && store.game.cells[id] === '') {
+  } else if (store.player === 'O' && store.game.over === false) {
     $(event.target).html('O')
   }
   logic.gameBoard(id, store.player, store.game.over)
