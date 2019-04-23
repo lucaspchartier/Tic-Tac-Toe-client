@@ -58,6 +58,7 @@ const signOutSuccess = function (signOutResponse) {
   $('#create-game-btn').hide()
   $('#get-games-btn').hide()
   $('.game-container').addClass('hidden')
+  $('.box').empty()
   setTimeout(() => $('.auth-message').empty(), 2000)
 }
 
