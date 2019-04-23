@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('./../store.js')
+const logic = require('./logic.js')
 
 const createGameSuccess = function (createGameResponse) {
   store.game = createGameResponse.game
@@ -33,14 +34,16 @@ const getGamesSuccess = function (getGamesResponse) {
   }, 2000)
 }
 
-const updateGameSuccess = function (updateGameResponse) {
+const updateGameSuccess = function (updateGameResponse, event, id, player, over) {
   store.game.cells = updateGameResponse.game.cells
-  console.log('This is store.game.cells ', store.game.cells)
-  if (store.player === 'X' && store.game.over === false && store.game.cells === '') {
+  if (store.player === 'X' && store.game.over === false && store.game.cells[id] === '') {
     $(event.target).html('X')
-  } else if (store.player === 'O' && store.game.over === false && store.game.cells === '') {
+  } else if (store.player === 'O' && store.game.over === false && store.game.cells[id] === '') {
     $(event.target).html('O')
   }
+  logic.gameBoard(id, player, over)
+  logic.switchPlayer(player)
+  logic.gameOver(store.game.cells)
 }
 
 module.exports = {

@@ -1,9 +1,8 @@
 'use strict'
 
-const store = require('./../store.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
-const logic = require('./logic.js')
+const store = require('./../store.js')
 
 const onCreateGame = function () {
   event.preventDefault()
@@ -21,15 +20,12 @@ const onGetGames = function () {
 
 const onUpdateGame = function (event) {
   event.preventDefault()
-  const data = $(event.target).data('cell-index')
+  const id = $(event.target).data('cell-index')
   const player = store.player
   const over = store.game.over
-  api.updateGame(data, player)
-    .then(ui.updateGameSuccess)
+  api.updateGame(id, player, over)
+    .then(responseData => ui.updateGameSuccess(responseData, event, id))
     .catch(ui.failure)
-  logic.gameBoard(data, player, over)
-  logic.switchPlayer(player)
-  logic.gameOver(store.game.cells)
 }
 
 module.exports = {
