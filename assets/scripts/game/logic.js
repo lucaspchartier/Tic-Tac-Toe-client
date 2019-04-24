@@ -5,8 +5,7 @@ const store = require('../store.js')
 const switchPlayer = function () {
   if (store.invalid) { return }
   store.player = store.player === 'X' ? 'O' : 'X'
-  $('.game-message').html(`${store.player}'s turn`)
-  setTimeout(() => $('.game-message').empty(), 2000)
+  $('.game-message').html(`${store.player}'s turn`).show()
 }
 
 const gameBoard = function (id, value, over) {
@@ -17,7 +16,7 @@ const gameBoard = function (id, value, over) {
     store.game.cells[id] = value
     store.invalid = false
   } else if (store.game.cells[id] === 'X' || 'O') {
-    $('.game-message').html('Box has already been taken.').fadeOut(2000)
+    $('.game-message').html('Cell has already been taken.')
     store.invalid = true
   }
 }
