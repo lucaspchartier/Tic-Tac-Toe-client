@@ -44,7 +44,7 @@ const gameOver = function (cell) {
     (cell[0] === 'O' && cell[4] === 'O' && cell[8] === 'O') ||
     (cell[2] === 'O' && cell[4] === 'O' && cell[6] === 'O')) {
     store.game.over = true
-    store.player = 'X'
+    store.player = 'O'
     store.winner = 'O'
     // O wins!
     $('.game-message').html('O wins!')
