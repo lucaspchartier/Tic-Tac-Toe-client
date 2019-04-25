@@ -19,7 +19,7 @@ Yes, this project looks easier than it looks, and I had a handful of difficultie
 
 ### Upcoming bugs/issues that need to be fixed in the future
 
-One issue that I eventually want to resolve is the ability to show the gameboard once a player presses the new game button; I ideally want it hidden to the user at first before pressing the new game button. Another slight issue that I eventually want to resolve is when a player starts a new game after winning or tieing, it still says "X/O wins!" or "It's a tie!", from the previous game, which I want to clear whenever the player presses new game.
+One issue that I eventually want to resolve is the ability to show the gameboard once a player presses the new game button; I ideally want it hidden to the user at first before pressing the new game button. Another slight issue that I eventually want to resolve is when a player starts a new game after winning or tieing, it still says "X/O wins!" or "It's a tie!", from the previous game, which I want to clear whenever the player presses new game. Another final issue that I eventually want to resolve is that whenever a user presses on a cell that's already taken, then I want a message to display that the cell has already been taken.
 
 ### Wireframes and User Stories
 
