@@ -15,11 +15,11 @@ A game of Tic Tac Toe, where the player can choose between the first letter X, o
 
 ### Challenges
 
-Yes, this project looks easier than it looks, and I had a handful of difficulties I had to overcome, and was fortunate enough to have several instructors and colleagues help me out when I needed it. A lot of the times, I had to post issues and bugs that I had trouble with in the issue cue, where I would receive remote consulting on how to fix the bugs that may affect gameplay and functionality.
+Yes, this project looks easier than it looks, and I had a handful of difficulties I had to overcome, and was fortunate enough to have several instructors and colleagues help me out when I needed it. Some challenges including using the right jQuery methods, especially in my ui.js files, for when a user makes a specific action and a response is rendered in return. Another challenge I worked through was constantly logging different arguments and iterators to see what they would return and if they returned what I wanted for a specific function.
 
 ### Upcoming bugs/issues that need to be fixed in the future
 
-Several issues that I intend to fix over the next couple of weeks include but are not limited to, fixing the draw function to indicate that a draw has occured between X and O, removing authentication and game messages after first appearing (i.e. after a user has signed in or a new game has been created), another issue I have also encountered that I intend to fix is the fact that a player has the ability to switch their letter on a square during a turn, which is a big no-no.
+One issue that I eventually want to resolve is the ability to show the gameboard once a player presses the new game button; I ideally want it hidden to the user at first before pressing the new game button. Another slight issue that I eventually want to resolve is when a player starts a new game after winning or tieing, it still says "X/O wins!" or "It's a tie!", from the previous game, which I want to clear whenever the player presses new game.
 
 ### Wireframes and User Stories
 

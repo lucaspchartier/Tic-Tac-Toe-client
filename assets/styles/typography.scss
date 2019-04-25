@@ -1,7 +1,6 @@
 body {
   background-color: $background-color;
   font-family: helvetica sans-serif;
-  margin: 0;
 }
 
 h1 {
@@ -11,8 +10,90 @@ h1 {
 }
 
 div {
-  padding: 25px;
   text-align: center;
+}
+
+.navbar {
+  height: 80px;
+  span {
+    height: 30px;
+  }
+}
+
+.navbar-dark .navbar-brand {
+  color: $background-color;
+}
+
+.bg-dark {
+  background-color: $font-color !important;
+}
+
+.btn-outline-warning {
+  color: $background-color;
+  border-color: $background-color;
+  background-color: transparent;
+}
+
+.btn-outline-warning:hover {
+  color: $font-color;
+  background-color: $background-color;
+  border-color: $background-color;
+}
+
+.btn-outline-warning:focus,
+.btn-outline-warning.focus  {
+  box-shadow: 0 0 0 0.2rem rgba(0, 156, 161, 0.5);
+}
+
+.btn-outline-warning:not(:disabled):not(.disabled):active,
+.btn-outline-warning:not(:disabled):not(.disabled).active,
+.show > .btn-outline-warning.dropdown-toggle {
+  color: $font-color;
+  background-color: $background-color;
+  border-color: $background-color;
+}
+
+.navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
+  color: $background-color;
+}
+
+.form-inline {
+  button {
+    border-color: $font-color;
+    color: $background-color;
+    margin-right: 10px;
+  }
+  .sign-out-btn,
+  .change-password-btn {
+    display: none;
+  }
+}
+
+.auth-form {
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  .sign-up-form {
+    display: none;
+    margin: 0 auto;
+  }
+  .sign-in-form {
+    display: none;
+    margin: 0 auto;
+  }
+  .change-password-form {
+    display: none;
+    margin: 0 auto;
+  }
+  form {
+    margin: 10px;
+  }
+  input {
+    width: 125px;
+  }
+  legend {
+    font-size: 18px;
+  }
 }
 
 .success-message {
@@ -29,7 +110,7 @@ div {
 
 .game-message {
   color: $font-color;
-  font-size: 50px;
+  font-size: 30px;
   text-align: center;
 }
 
@@ -43,23 +124,45 @@ div {
   visibility: hidden;
 }
 
-.box {
-  align-items: center;
-  border: 1px solid $border-color;
+.game-container {
+  margin: 120px auto 0 auto;
+}
+
+.gameboard {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  height: 550px;
+  width: 550px;
+  margin: 0 auto;
   color: $background-color;
-  display: flex;
   font-size: 50px;
-  height: 80px;
   justify-content: center;
   padding: 100px;
 }
 
-.teal {
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: $font-color;
+  border: 2px solid $border-color;
+  border-radius: 50px;
+  font-size: 35px;
+  color: $background-color;
+  &:hover {
+    background-color: $background-color;
+  }
 }
 
 .form {
   width: 100%;
+}
+
+button,
+html [type="button"], [type="reset"], [type="submit"] {
+  -webkit-appearance: button;
+  background-color: #009ca1;
+  color: #0d2b5b;
 }
 
 #sign-up-form {
@@ -75,9 +178,4 @@ div {
 #change-password-form {
   color: $font-color;
   text-align: center;
-}
-
-#sign-out-button {
-  margin: 0;
-  position: relative;
 }

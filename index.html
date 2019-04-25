@@ -1,81 +1,75 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Game</title>
+      <title>Tic Tac Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link rel="icon" type="image/png" href="img/tictactoe.png">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Tic Tac Toe</h1>
+      <!-- Navbar -->
+      <nav class="navbar navbar-dark bg-dark">
+        <span class="navbar-brand mb-0 h1">Tic Tac Toe</span>
+          <form class="form-inline">
+            <button class="btn btn-outline-warning sign-up-btn" id="sign-up-btn" type="button">Sign Up</button>
+            <button class="btn btn-outline-warning sign-in-btn" id="sign-in-btn" type="button">Log In</button>
+            <button class="btn btn-outline-warning sign-out-btn" id="sign-out-btn" type="button">Log Out</button>
+            <button class="btn btn-outline-warning change-password-btn" id="change-password-btn" type="button">Change Password</button>
+          </form>
+        </nav>
       <!-- Auth messages -->
       <div class="auth-message"></div>
-
-      <!-- Game messages -->
-      <div class="game-message"></div>
-
-      <!-- Grid starts here! -->
-      <div class="grid hidden">
-        <div class="row">
-          <div id = "0" class="col-4 col-lg-4 box teal" data-index=0></div>
-          <div id = "1" class="col-4 col-lg-4 box teal" data-index=1></div>
-          <div id = "2" class="col-4 col-lg-4 box teal" data-index=2></div>
-          <div id = "3" class="col-4 col-lg-4 box teal" data-index=3></div>
-          <div id = "4" class="col-4 col-lg-4 box teal" data-index=4></div>
-          <div id = "5" class="col-4 col-lg-4 box teal" data-index=5></div>
-          <div id = "6" class="col-4 col-lg-4 box teal" data-index=6></div>
-          <div id = "7" class="col-4 col-lg-4 box teal" data-index=7></div>
-          <div id = "8" class="col-4 col-lg-4 box teal" data-index=8></div>
-        </div>
-      </div>
-      <!-- Grid ends here! -->
-      <br>
-
-      <!-- sign-up form starts here! -->
-      <div class="form">
-        <form id="sign-up-form">
+      <!-- Auth form -->
+      <div class="auth-form" id="auth-form">
+        <form class="sign-up-form center" id="sign-up-form">
           <legend>Sign Up</legend>
-          <input name="credentials[email]" type="text" placeholder="email"/>
-          <input name="credentials[password]" type="password" placeholder="password"/>
-          <input name="credentials[password_confirmation]" type="password" placeholder="confirm password"/>
-          <input type="submit" />
+            <input type="email" name="credentials[email]" placeholder="Email">
+            <input type="password" name="credentials[password]" placeholder="Password">
+            <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+            <input type="submit" value="Sign Up">
         </form>
-        <!-- sign-up form ends here! -->
-        <br>
-
-        <!-- sign-in form starts here! -->
-        <form id="sign-in-form">
-          <legend>Log In</legend>
-          <input name="credentials[email]" type="text" placeholder="email"/>
-          <input name="credentials[password]" type="password" placeholder="password"/>
-          <input type="submit" />
+        <form class="sign-in-form center" id="sign-in-form">
+            <legend>Log In</legend>
+              <input type="email" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="submit" value="Log In">
         </form>
-        <!--sign-in form ends here! -->
-        <br>
-
-        <!-- change password form starts here! -->
-        <form id="change-password-form" class="hidden">
+        <form class="change-password-form center" id="change-password-form" >
           <legend>Change Password</legend>
-          <input name="passwords[old]" type="password" placeholder="old password"/>
-          <input name="passwords[new]" type="password" placeholder="new password"/>
-          <input type="submit" />
+            <input class="old-password" type="password" name="passwords[old]" placeholder="Old Password">
+            <input class="new-password" type="password" name="passwords[new]" placeholder="New Password">
+            <input type="submit" value="Change Password">
         </form>
-        <!-- change password form ends here! -->
+      </div>
+
+      <div class="game-container hidden">
+        <!-- Game messages -->
+        <div class="game-message"></div>
         <br>
-
-        <!-- sign out button goes here! -->
-        <button id="sign-out-button" class="hidden">Log Out</button>
-
-        <!-- create game button goes here! -->
-        <button id="create-game-button" class="hidden">New Game</button>
-
-        <!-- get game button goes here! -->
-        <button id="get-game-button" class="hidden">Get Games</button>
+        <!-- Create game button goes here! -->
+        <button id="create-game-btn">New Game</button>
+        <!-- Get game button goes here! -->
+        <button id="get-games-btn">Get Games</button>
+        <br>
+        <!-- Grid starts here! -->
+        <div class="gameboard">
+          <div data-cell-index=0 class="box"></div>
+          <div data-cell-index=1 class="box"></div>
+          <div data-cell-index=2 class="box"></div>
+          <div data-cell-index=3 class="box"></div>
+          <div data-cell-index=4 class="box"></div>
+          <div data-cell-index=5 class="box"></div>
+          <div data-cell-index=6 class="box"></div>
+          <div data-cell-index=7 class="box"></div>
+          <div data-cell-index=8 class="box"></div>
+        </div>
+        <!-- Grid ends here! -->
       </div>
     </body>
 </html>
