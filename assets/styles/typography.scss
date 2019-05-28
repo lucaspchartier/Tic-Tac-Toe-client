@@ -56,7 +56,9 @@ div {
 .form-inline {
   button {
     border-color: $font-color;
+    border-width: thick;
     color: $background-color;
+    font-weight: bold;
     margin-right: 10px;
   }
   .sign-out-btn,
