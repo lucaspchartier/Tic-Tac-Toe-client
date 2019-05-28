@@ -17,6 +17,13 @@ const failure = function (failureResponse) {
   setTimeout(() => $('.auth-message').empty(), 2000)
 }
 
+const passwordsDontMatch = function (failureResponse) {
+  $('.auth-message').html('Passwords do not match.')
+  $('.auth-message').addClass('error-message')
+  $('.auth-message').removeClass('success-message')
+  setTimeout(() => $('.auth-message').empty(), 2000)
+}
+
 const signInSuccess = function (signInResponse) {
   store.user = signInResponse.user
   $('.auth-message').html('Logged in successfully!')
@@ -72,6 +79,7 @@ const signOutSuccess = function (signOutResponse) {
 module.exports = {
   signUpSuccess,
   failure,
+  passwordsDontMatch,
   signInSuccess,
   changePasswordSuccess,
   changePasswordFailure,

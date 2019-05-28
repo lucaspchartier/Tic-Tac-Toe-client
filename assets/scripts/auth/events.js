@@ -7,10 +7,15 @@ const ui = require('./ui.js')
 const onSignUp = function (event) {
   event.preventDefault()
   const userData = getFormFields(event.target)
-  $(event.target).trigger('reset')
-  api.signUp(userData)
-    .then(ui.signUpSuccess)
-    .catch(ui.failure)
+  if ($('.pass').val() !== $('.confirm-pass').val()) {
+    $(event.target).trigger('reset')
+    ui.passwordsDontMatch()
+  } else {
+    $(event.target).trigger('reset')
+    api.signUp(userData)
+      .then(ui.signUpSuccess)
+      .catch(ui.failure)
+  }
 }
 
 const onSignIn = function (event) {
@@ -25,7 +30,7 @@ const onSignIn = function (event) {
 const onChangePassword = function (event) {
   event.preventDefault()
   const userData = getFormFields(event.target)
-  if ($('.old-password').val() === $('.new-password').val()) {
+  if ($('.old-pass').val() === $('.new-pass').val()) {
     $(event.target).trigger('reset')
     ui.changePasswordFailure()
   } else {
