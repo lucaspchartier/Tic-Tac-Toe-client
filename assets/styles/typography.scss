@@ -3,12 +3,6 @@ body {
   font-family: helvetica sans-serif;
 }
 
-h1 {
-  color: $font-color;
-  font-size: 100px;
-  text-align: center;
-}
-
 div {
   text-align: center;
 }
@@ -22,6 +16,8 @@ div {
 
 .navbar-dark .navbar-brand {
   color: $background-color;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 .bg-dark {
