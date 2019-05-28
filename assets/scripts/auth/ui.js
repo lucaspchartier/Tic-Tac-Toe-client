@@ -44,6 +44,13 @@ const changePasswordSuccess = function (changePasswordResponse) {
   setTimeout(() => $('.auth-message').empty(), 2000)
 }
 
+const changePasswordFailure = function (failureResposne) {
+  $('.auth-message').html('New password cannot match old password.')
+  $('.auth-message').addClass('error-message')
+  $('.auth-message').removeClass('success-message')
+  setTimeout(() => $('.auth-message').empty(), 2000)
+}
+
 const signOutSuccess = function (signOutResponse) {
   store.game.over = true
   $('.auth-message').html('Logged out successfully!')
@@ -67,5 +74,6 @@ module.exports = {
   failure,
   signInSuccess,
   changePasswordSuccess,
+  changePasswordFailure,
   signOutSuccess
 }
