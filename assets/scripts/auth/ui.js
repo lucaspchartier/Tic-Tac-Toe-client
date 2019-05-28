@@ -58,7 +58,7 @@ const changePasswordFailure = function (failureResposne) {
   setTimeout(() => $('.auth-message').empty(), 2000)
 }
 
-const signOutSuccess = function (signOutResponse) {
+const signOutSuccess = function () {
   store.game.over = true
   $('.auth-message').html('Logged out successfully!')
   $('.auth-message').removeClass('error-message')
