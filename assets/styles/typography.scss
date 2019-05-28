@@ -161,8 +161,9 @@ div {
 button,
 html [type="button"], [type="reset"], [type="submit"] {
   -webkit-appearance: button;
-  background-color: #009ca1;
-  color: #0d2b5b;
+  background-color: $font-color;
+  color: $background-color;
+  border-color: $background-color;
 }
 
 #sign-up-form {
