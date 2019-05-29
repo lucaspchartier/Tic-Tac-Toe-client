@@ -5,21 +5,21 @@ const ui = require('./ui.js')
 const store = require('./../store.js')
 const logic = require('./logic.js')
 
-const onCreateGame = function () {
+const onCreateGame = () => {
   event.preventDefault()
   api.createGame()
     .then(ui.createGameSuccess)
     .catch(ui.failure)
 }
 
-const onGetGames = function () {
+const onGetGames = () => {
   event.preventDefault()
   api.getGames()
     .then(ui.getGamesSuccess)
     .catch(ui.failure)
 }
 
-const onUpdateGame = function (event) {
+const onUpdateGame = (event) => {
   event.preventDefault()
   if ($(event.target).text()) return
   const id = $(event.target).data('cell-index')
