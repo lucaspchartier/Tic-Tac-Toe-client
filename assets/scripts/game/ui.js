@@ -3,7 +3,7 @@
 const store = require('./../store.js')
 const logic = require('./logic.js')
 
-const createGameSuccess = function (createGameResponse) {
+const createGameSuccess = (createGameResponse) => {
   store.game = createGameResponse.game
   store.player = 'X'
   $('.auth-message').html('New game successfully created!')
@@ -13,14 +13,14 @@ const createGameSuccess = function (createGameResponse) {
   setTimeout(() => $('.auth-message').empty(), 2000)
 }
 
-const failure = function (failureResponse) {
+const failure = (failureResponse) => {
   $('.auth-message').html('Error: Something went wrong.')
   $('.auth-message').addClass('error-message')
   $('.auth-message').removeClass('success-message')
   setTimeout(() => $('.auth-message').empty(), 2000)
 }
 
-const getGamesSuccess = function (getGamesResponse) {
+const getGamesSuccess = (getGamesResponse) => {
   store.data = getGamesResponse.data
   $('.game-message').html(getGamesResponse.games.length + ' games played.')
   $('.auth-message').addClass('success-message')
@@ -28,7 +28,7 @@ const getGamesSuccess = function (getGamesResponse) {
   setTimeout(() => $('.auth-message').empty(), 2000)
 }
 
-const updateGameSuccess = function (updateGameResponse, event, id, player, over) {
+const updateGameSuccess = (updateGameResponse, event, id, player, over) => {
   store.game.cells = updateGameResponse.game.cells
   if (store.player === 'X' && store.game.over === false) {
     $(event.target).html('X')

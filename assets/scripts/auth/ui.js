@@ -2,7 +2,7 @@
 
 const store = require('./../store.js')
 
-const signUpSuccess = function (signUpResponse) {
+const signUpSuccess = (signUpResponse) => {
   $('.auth-message').html('Signed up successfully!')
   $('.auth-message').addClass('success-message')
   $('.auth-message').removeClass('error-message')
@@ -10,21 +10,21 @@ const signUpSuccess = function (signUpResponse) {
   setTimeout(() => $('.auth-message').empty(), 2000)
 }
 
-const failure = function (failureResponse) {
+const failure = (failureResponse) => {
   $('.auth-message').html('Error: Something went wrong.')
   $('.auth-message').addClass('error-message')
   $('.auth-message').removeClass('success-message')
   setTimeout(() => $('.auth-message').empty(), 2000)
 }
 
-const passwordsDontMatch = function (failureResponse) {
+const passwordsDontMatch = (failureResponse) => {
   $('.auth-message').html('Passwords do not match.')
   $('.auth-message').addClass('error-message')
   $('.auth-message').removeClass('success-message')
   setTimeout(() => $('.auth-message').empty(), 2000)
 }
 
-const signInSuccess = function (signInResponse) {
+const signInSuccess = (signInResponse) => {
   store.user = signInResponse.user
   $('.auth-message').html('Logged in successfully!')
   $('.auth-message').addClass('success-message')
@@ -43,7 +43,7 @@ const signInSuccess = function (signInResponse) {
   setTimeout(() => $('.game-message').empty(), 5000)
 }
 
-const changePasswordSuccess = function (changePasswordResponse) {
+const changePasswordSuccess = (changePasswordResponse) => {
   $('.auth-message').html('Password change successful!')
   $('.auth-message').addClass('success-message')
   $('.auth-message').removeClass('error-message')
@@ -51,14 +51,14 @@ const changePasswordSuccess = function (changePasswordResponse) {
   setTimeout(() => $('.auth-message').empty(), 2000)
 }
 
-const changePasswordFailure = function (failureResposne) {
+const changePasswordFailure = (failureResposne) => {
   $('.auth-message').html('New password cannot match old password.')
   $('.auth-message').addClass('error-message')
   $('.auth-message').removeClass('success-message')
   setTimeout(() => $('.auth-message').empty(), 2000)
 }
 
-const signOutSuccess = function () {
+const signOutSuccess = () => {
   if (store.game) store.game.over = true
   $('.auth-message').html('Logged out successfully!')
   $('.auth-message').removeClass('error-message')
