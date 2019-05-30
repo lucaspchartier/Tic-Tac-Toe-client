@@ -7,6 +7,7 @@ const createGameSuccess = (createGameResponse) => {
   store.game = createGameResponse.game
   store.player = 'X'
   $('.auth-message').html('New game successfully created!')
+  $('.game-message').html(`${store.player}'s turn`).show()
   $('.auth-message').addClass('success-message')
   $('.auth-message').removeClass('error-message')
   $('.box').empty()
