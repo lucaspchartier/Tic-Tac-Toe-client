@@ -16,15 +16,15 @@ $(() => {
   // Game events
   gameEvents.addHandlers()
   // Form toggles
-  $('#sign-up-btn').click(function () {
+  $('#sign-up-btn').click(() => {
     $('.sign-up-form').slideDown(300)
     $('.sign-in-form').slideUp(500)
   })
-  $('#sign-in-btn').click(function () {
+  $('#sign-in-btn').click(() => {
     $('.sign-in-form').slideDown(300)
     $('.sign-up-form').slideUp(500)
   })
-  $('#change-password-btn').click(function () {
+  $('#change-password-btn').click(() => {
     $('.change-password-form').slideDown(500)
   })
 })
