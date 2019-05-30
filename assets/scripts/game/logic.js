@@ -2,13 +2,13 @@
 
 const store = require('../store.js')
 
-const switchPlayer = function () {
+const switchPlayer = () => {
   if (store.invalid) { return }
   store.player = store.player === 'X' ? 'O' : 'X'
   $('.game-message').html(`${store.player}'s turn`).show()
 }
 
-const gameBoard = function (id, value, over) {
+const gameBoard = (id, value, over) => {
   if (store.game.over === true) {
     return
   }
@@ -21,7 +21,7 @@ const gameBoard = function (id, value, over) {
   }
 }
 
-const gameOver = function (cell) {
+const gameOver = (cell) => {
   if ((cell[0] === 'X' && cell[1] === 'X' && cell[2] === 'X') ||
     (cell[3] === 'X' && cell[4] === 'X' && cell[5] === 'X') ||
     (cell[6] === 'X' && cell[7] === 'X' && cell[8] === 'X') ||
