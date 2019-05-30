@@ -31,8 +31,15 @@ const onUpdateGame = (event) => {
   logic.gameBoard(id, store.player, store.game.over)
 }
 
+const addHandlers = () => {
+  $('#create-game-btn').on('click', onCreateGame)
+  $('#get-games-btn').on('click', onGetGames)
+  $('.box').on('click', onUpdateGame)
+}
+
 module.exports = {
   onCreateGame,
   onGetGames,
-  onUpdateGame
+  onUpdateGame,
+  addHandlers
 }

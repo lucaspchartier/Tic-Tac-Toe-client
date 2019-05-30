@@ -12,16 +12,9 @@ const gameEvents = require('./game/events.js')
 // document on ready
 $(() => {
   // Auth events
-  $('#sign-up-form').on('submit', authEvents.onSignUp)
-  $('#sign-in-form').on('submit', authEvents.onSignIn)
-  $('#change-password-form').on('submit', authEvents.onChangePassword)
-  $('#sign-out-btn').on('click', authEvents.onSignOut)
-
+  authEvents.addHandlers()
   // Game events
-  $('#create-game-btn').on('click', gameEvents.onCreateGame)
-  $('#get-games-btn').on('click', gameEvents.onGetGames)
-  $('.box').on('click', gameEvents.onUpdateGame)
-
+  gameEvents.addHandlers()
   // Form toggles
   $('#sign-up-btn').click(function () {
     $('.sign-up-form').slideDown(300)
