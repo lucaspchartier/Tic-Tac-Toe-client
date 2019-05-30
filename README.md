@@ -23,7 +23,7 @@ One issue that I eventually want to resolve is the ability to show the gameboard
 
 ### Wireframes and User Stories
 
-[Tic Tac Toe Wireframes](https://i.imgur.com/XbA37PH.jpg)
+![Tic Tac Toe Wireframes](https://i.imgur.com/XbA37PH.jpg)
 
 * As a new user, I can sign up
 * As a signed up user, I can log in
