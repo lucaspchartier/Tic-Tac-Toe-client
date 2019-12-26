@@ -21,7 +21,7 @@ const gameBoard = (id, value, over) => {
   }
 }
 
-const gameOver = (cell) => {
+const gameOver = cell => {
   if ((cell[0] === 'X' && cell[1] === 'X' && cell[2] === 'X') ||
     (cell[3] === 'X' && cell[4] === 'X' && cell[5] === 'X') ||
     (cell[6] === 'X' && cell[7] === 'X' && cell[8] === 'X') ||
