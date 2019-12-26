@@ -3,7 +3,7 @@
 const config = require('./../config.js')
 const store = require('./../store.js')
 
-const createGame = (inputData) => {
+const createGame = inputData => {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'POST',
@@ -15,7 +15,7 @@ const createGame = (inputData) => {
   })
 }
 
-const getGames = (data) => {
+const getGames = data => {
   return $.ajax({
     url: config.apiUrl + '/games',
     method: 'GET',
