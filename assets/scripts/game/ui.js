@@ -3,7 +3,7 @@
 const store = require('./../store.js')
 const logic = require('./logic.js')
 
-const createGameSuccess = (createGameResponse) => {
+const createGameSuccess = createGameResponse => {
   store.game = createGameResponse.game
   store.player = 'X'
   $('.auth-message').html('New game successfully created!')
@@ -14,14 +14,14 @@ const createGameSuccess = (createGameResponse) => {
   setTimeout(() => $('.auth-message').empty(), 2000)
 }
 
-const failure = (failureResponse) => {
+const failure = () => {
   $('.auth-message').html('Error: Something went wrong.')
   $('.auth-message').addClass('error-message')
   $('.auth-message').removeClass('success-message')
   setTimeout(() => $('.auth-message').empty(), 2000)
 }
 
-const getGamesSuccess = (getGamesResponse) => {
+const getGamesSuccess = getGamesResponse => {
   store.data = getGamesResponse.data
   $('.game-message').html(getGamesResponse.games.length + ' games played.')
   $('.auth-message').addClass('success-message')
