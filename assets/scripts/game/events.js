@@ -19,7 +19,7 @@ const onGetGames = () => {
     .catch(ui.failure)
 }
 
-const onUpdateGame = (event) => {
+const onUpdateGame = event => {
   event.preventDefault()
   if ($(event.target).text()) return
   const id = $(event.target).data('cell-index')
