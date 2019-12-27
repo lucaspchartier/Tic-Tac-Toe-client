@@ -4,7 +4,7 @@
 
 A game of Tic Tac Toe, where the player can choose between the first letter X, or the second letter, O. The first letter to get three in a row, vertical, horizontal, or diagonal, wins the game.
 
-### List of technologies used.
+### List of technologies used
 
 * HTML
 * CSS
